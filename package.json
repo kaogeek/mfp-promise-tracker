@@ -19,6 +19,9 @@
     "*.{js,ts,vue}": "eslint --cache",
     "*.**": "prettier --write --ignore-unknown"
   },
+  "engines": {
+    "node": "12 - 16"
+  },
   "dependencies": {
     "@wevisdemo/ui": "^4.0.0",
     "core-js": "^3.19.3",

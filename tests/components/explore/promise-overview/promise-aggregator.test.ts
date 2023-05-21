@@ -126,8 +126,8 @@ test('should be able to group by topic', () => {
       data: [{ status: PromiseStatus.NoData, count: 1 }],
     },
     {
-      label: promiseTopicTextMap.get(PromiseTopic.Foreign)?.short as string,
-      icon: `topic/${PromiseTopic.Foreign}_small.png`,
+      label: promiseTopicTextMap.get(PromiseTopic.Welfare)?.short as string,
+      icon: `topic/${PromiseTopic.Welfare}_small.png`,
       data: [],
     },
     {
