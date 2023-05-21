@@ -25,9 +25,9 @@
       <a
         target="_blank"
         rel="noreferrer noopener"
-        href="https://wevis.info"
+        href="https://discord.gg/kaogeek"
         class="wv_footer__logo"
-        >9Geek</a
+        >kaogeek</a
       >
     </div>
   </div>

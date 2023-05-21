@@ -1,8 +1,8 @@
-export const BASE_TITLE = 'Promise Tracker';
+export const BASE_TITLE = 'MFP Promise Tracker';
 const DESCRIPTION =
-  'สำรวจ รับรู้ ร่วมติดตาม ให้พรรคการเมืองทำตามคำสัญญาที่ให้ไว้กับเรา';
+  'ติดตาม 300+ นโยบายจากพรรคก้าวไกล';
 export const DEFAULT_OG_IMAGE =
-  'https://raw.githubusercontent.com/wevisdemo/promise-tracker/main/static/og/default.jpg';
+  '';
 
 interface createMetadataParams {
   pageName?: string;
