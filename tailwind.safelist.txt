@@ -1,0 +1,5 @@
+bg-status-nodata
+bg-status-proposed
+bg-status-paused
+bg-status-working
+bg-status-done

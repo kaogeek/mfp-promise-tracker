@@ -1,0 +1,51 @@
+name: Deploy to staging
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+  workflow_dispatch:
+
+concurrency:
+  group: staging_environment
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+
+      - name: Setup node env 🏗
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
+
+      - name: Install dependencies 👨🏻‍💻
+        run: yarn
+
+      - name: Run tests 🧪
+        run: yarn test
+
+      - name: Fetch data 🏃🏻‍♂️
+        run: |
+          touch .env
+          echo NOCODB_API_PATH=${{ secrets.NOCODB_API_PATH }} >> .env
+          echo NOCODB_API_TOKEN=${{ secrets.NOCODB_API_TOKEN }} >> .env
+          yarn fetch-data
+
+      - name: Build 🍳
+        run: yarn build
+        env:
+          BASE_PATH: /promise-tracker
+
+      - name: Deploy ☁️
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
