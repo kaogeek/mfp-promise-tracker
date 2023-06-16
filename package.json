@@ -13,7 +13,7 @@
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "lint-staged": "lint-staged",
-    "fetch-data": "ts-node -r dotenv/config scripts/data-fetcher"
+    "fetch-data": "ts-node -r dotenv/config scripts/monday-fetcher"
   },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint --cache",
