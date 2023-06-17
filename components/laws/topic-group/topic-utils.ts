@@ -12,7 +12,7 @@ export interface Group {
 
 export const groupBy = (topic: String, status: String) => {
   if (topic !== '' && status === '') {
-    return { by: 'topic', where: topic as PromiseLawsTopic };
+    return { by: 'category', where: topic as PromiseLawsTopic };
   } else if (topic === '' && status !== '') {
     return { by: 'status', where: status as PromiseStatus };
   } else {
@@ -25,7 +25,7 @@ export const filteredPromise = (
   by: String,
   where: PromiseLawsTopic | PromiseStatus | String
 ): TrackingPromiseLaws[] => {
-  if (by === 'topic') {
+  if (by === 'category') {
     return promises.filter(
       (promise: TrackingPromiseLaws) =>
         promise.category === (where as PromiseLawsTopic)
@@ -56,7 +56,7 @@ export const getGroupTitle = (
   by: string,
   where: string
 ): string | undefined => {
-  if (by === 'topic') {
+  if (by === 'category') {
     const title = getTopicTitle(where as PromiseLawsTopic);
     if (title) {
       return 'ประเด็น' + getTopicTitle(where as PromiseLawsTopic);
