@@ -4,7 +4,7 @@
       <WvParagraphGroup heading="เกี่ยวกับโปรเจกต์นี้">
         <p>
           โปรเจกต์นี้สร้างขึ้นมาเพื่อติดตามนโยบายที่สัญญากับประชาชนไว้ของพรรคก้าวไกล
-          กว่า 300 นโยบายที่แบ่งตามหมวดหมู่ต่าง ๆ 
+          กว่า 300 นโยบายที่แบ่งตามหมวดหมู่ต่าง ๆ
         </p>
       </WvParagraphGroup>
       <br /><br />
@@ -179,8 +179,7 @@
       </WvParagraphGroup>
 
       <WvParagraphGroup :small="true" heading="อ้างอิงข้อมูลจาก :">
-        <ul class="list-disc list-outside ml-8">
-        </ul>
+        <ul class="list-disc list-outside ml-8"></ul>
       </WvParagraphGroup>
     </WvParagraphGroup>
   </WvContainer>

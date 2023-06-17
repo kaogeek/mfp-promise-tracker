@@ -37,6 +37,6 @@ export default Vue.extend({
 .gradient-background {
   z-index: -5;
   /* @apply w-screen h-screen fixed top-0 bg-gradient-to-b from-ultramarine to-black; */
-  @apply w-screen h-screen fixed top-0 bg-gradient-to-b to-black from-status-proposed ;
+  @apply w-screen h-screen fixed top-0 bg-gradient-to-b to-black from-status-proposed;
 }
 </style>

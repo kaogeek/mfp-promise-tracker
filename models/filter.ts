@@ -1,10 +1,12 @@
 import { PromiseStatus, PromiseTopic } from './promise';
+import { PromiseLawsTopic } from './promise-laws';
 
 export enum FilterType {
   Party = 'party',
   Status = 'status',
   Keyword = 'keyword',
   Topic = 'topic',
+  Category = 'category',
 }
 
 export type Filter =
@@ -19,4 +21,8 @@ export type Filter =
   | {
       type: FilterType.Topic;
       value: PromiseTopic;
+    }
+  | {
+      type: FilterType.Category;
+      value: PromiseLawsTopic;
     };

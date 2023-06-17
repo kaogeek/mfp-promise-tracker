@@ -77,7 +77,7 @@ export default Vue.extend({
   },
   computed: {
     themeClasses() {
-      switch ((this.theme as unknown) as LinkBannerTheme) {
+      switch (this.theme as unknown as LinkBannerTheme) {
         case 'transparent-gray':
           return ['bg-gray', 'bg-opacity-10', 'text-white'];
         case 'ultramarine':

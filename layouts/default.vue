@@ -34,17 +34,18 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 // @ts-ignore
-import WvNavButton from "@wevisdemo/ui/components/nav-button.vue";
+import WvNavButton from '@wevisdemo/ui/components/nav-button.vue';
 
 export default Vue.extend({
   components: { WvNavButton },
   data() {
     return {
       routes: [
-        { label: "หน้าแรก", path: "/" },
-        { label: "ดูคำสัญญา", path: "/explore" },
+        { label: 'หน้าแรก', path: '/' },
+        { label: 'ดูคำสัญญา', path: '/explore' },
+        { label: 'ติดตามร่างกฎหมาย', path: '/laws' },
         // { label: 'เกี่ยวกับโครงการ', path: '/about' },
       ],
     };

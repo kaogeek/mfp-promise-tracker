@@ -7,7 +7,7 @@ export enum PromiseTopic {
   Agriculture = 'agriculture',
   Environmental = 'environmental',
   Health = 'health',
-  Economics = 'economics'
+  Economics = 'economics',
 }
 
 export enum PromiseStatus {
@@ -66,28 +66,24 @@ export const promiseTopicTextMap = new Map<
   PromiseTopic,
   { long: string; short: string }
 >([
+  [PromiseTopic.Democracy, { long: 'ประชาธิปไตยเต็มใบ', short: 'ประชาธิปไตย' }],
+  [PromiseTopic.Welfare, { long: 'สวัสดิการครบวงจร', short: 'สวัสดิการ' }],
   [
-    PromiseTopic.Democracy,
-    { long: 'ประชาธิปไตยเต็มใบ', short: 'ประชาธิปไตย' },
+    PromiseTopic.Administration,
+    { long: 'จังหวัดจัดการตนเอง', short: 'จังหวัดจัดการตนเอง' },
   ],
-  [
-    PromiseTopic.Welfare,
-    { long: 'สวัสดิการครบวงจร', short: 'สวัสดิการ' },
-  ],
-  [PromiseTopic.Administration, { long: 'จังหวัดจัดการตนเอง', short: 'จังหวัดจัดการตนเอง' }],
   [
     PromiseTopic.Government,
     { long: 'ราชการเพื่อราษฎร', short: 'ราชการเพื่อราษฎร' },
   ],
-  [
-    PromiseTopic.Education,
-    { long: 'ปฏิวัติการศึกษา', short: 'การศึกษา' },
-  ],
+  [PromiseTopic.Education, { long: 'ปฏิวัติการศึกษา', short: 'การศึกษา' }],
   [PromiseTopic.Agriculture, { long: 'เกษตรก้าวหน้า', short: 'เกษตร' }],
-  [PromiseTopic.Environmental, { long: 'สิ่งแวดล้อมยั่งยืน', short: 'สิ่งแวดล้อม' }],
+  [
+    PromiseTopic.Environmental,
+    { long: 'สิ่งแวดล้อมยั่งยืน', short: 'สิ่งแวดล้อม' },
+  ],
   [PromiseTopic.Health, { long: 'สุขภาพดีทั้งกาย-ใจ', short: 'สุขภาพ' }],
   [PromiseTopic.Economics, { long: 'เศรษฐกิจโตเพื่อทุกคน', short: 'เศรษฐกิจ' }],
-  
 ]);
 
 export const promiseStatusTextMap = new Map<PromiseStatus, string>([

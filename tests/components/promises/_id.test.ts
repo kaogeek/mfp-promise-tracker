@@ -132,7 +132,7 @@ describe('PromisePage', () => {
     const ogTitle = meta[1].content;
     const ogImage = meta[3].content;
 
-    expect(title).toBe('Promise Tracker');
+    expect(title).toBe('MFP Promise Tracker');
     expect(description).toBe(
       'สำรวจ รับรู้ ร่วมติดตาม ให้พรรคการเมืองทำตามคำสัญญาที่ให้ไว้กับเรา'
     );

@@ -1,8 +1,6 @@
 export const BASE_TITLE = 'MFP Promise Tracker';
-const DESCRIPTION =
-  'ติดตาม 300+ นโยบายจากพรรคก้าวไกล';
-export const DEFAULT_OG_IMAGE =
-  '';
+const DESCRIPTION = 'ติดตาม 300+ นโยบายจากพรรคก้าวไกล';
+export const DEFAULT_OG_IMAGE = '';
 
 interface createMetadataParams {
   pageName?: string;
