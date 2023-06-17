@@ -44,7 +44,9 @@ export default Vue.extend({
   },
   computed: {
     alignmentClass() {
-      return (this.align as unknown as Alignment) === Alignment.Vertical ? 'flex-col' : 'flex-row';
+      return (this.align as unknown as Alignment) === Alignment.Vertical
+        ? 'flex-col'
+        : 'flex-row';
     },
   },
 });

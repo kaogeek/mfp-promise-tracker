@@ -20,7 +20,11 @@ export default {
       ...meta,
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: `${BASE_PATH}/favicon-32x32.png` },
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: `${BASE_PATH}/favicon-32x32.png`,
+      },
       {
         rel: 'manifest',
         href: `${BASE_PATH}/site.webmanifest`,
@@ -67,5 +71,5 @@ export default {
       );
       return [...promisesRoute];
     },
-  }
+  },
 };

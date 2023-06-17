@@ -1,4 +1,5 @@
 import { PromiseStatus, PromiseTopic } from './promise';
+import { PromiseLawsTopic } from './promise-laws';
 
 export enum FilterType {
   Party = 'party',
@@ -18,5 +19,5 @@ export type Filter =
     }
   | {
       type: FilterType.Topic;
-      value: PromiseTopic;
+      value: PromiseTopic | PromiseLawsTopic;
     };

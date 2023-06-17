@@ -28,7 +28,7 @@
               <path d="M1.6875 5.625H16.3125" />
               <path d="M7.3125 12.375H10.6875" />
             </svg>
-            <p class="wv-font-condolar wv-h11 text-white">เรียงคำสัญญาตาม</p>
+            <p class="wv-font-condolar wv-h11 text-white">เรียงร่างกฎหมายตาม</p>
           </div>
 
           <ToggleList
@@ -73,15 +73,16 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import PromiseOverview from '@/components/explore/promise-overview/promise-overview.vue';
+import PromiseOverview from '@/components/laws/promise-overview/promise-overview.vue';
 import promises from '@/data/promises.json';
-import TopicGroup from '@/components/explore/topic-group/topic-group.vue';
-import FilterPanel from '@/components/explore/filter-panel/filter-panel.vue';
+import TopicGroup from '@/components/laws/topic-group/topic-group.vue';
+import FilterPanel from '@/components/laws/filter-panel/filter-panel.vue';
 import ToggleList, { ListOption } from '@/components/toggle/toggle-list.vue';
 import Button from '@/components/button.vue';
 // import LinkBanner from '@/components/link-banner.vue';
 // import FormLink from '@/components/form-link.vue';
-import { PromiseTopic, PromiseStatus, TrackingPromise } from '@/models/promise';
+import { PromiseStatus } from '@/models/promise';
+import { PromiseLawsTopic, TrackingPromiseLaws } from '@/models/promise-laws';
 import { Filter, FilterType } from '~/models/filter';
 import { createMetadata } from '~/utils/metadata';
 
@@ -92,7 +93,7 @@ enum GroupBy {
 
 const checkFilterOnPromise = (
   { type, value }: Filter,
-  promise: TrackingPromise
+  promise: TrackingPromiseLaws
 ): boolean => {
   switch (type) {
     case FilterType.Party:
@@ -122,15 +123,14 @@ export default Vue.extend({
   data() {
     return {
       topics: [
-        PromiseTopic.Democracy,
-        PromiseTopic.Welfare,
-        PromiseTopic.Administration,
-        PromiseTopic.Government,
-        PromiseTopic.Education,
-        PromiseTopic.Agriculture,
-        PromiseTopic.Environmental,
-        PromiseTopic.Health,
-        PromiseTopic.Economics,
+        PromiseLawsTopic.Politics,
+        PromiseLawsTopic.Rights,
+        PromiseLawsTopic.Land,
+        PromiseLawsTopic.Government,
+        PromiseLawsTopic.Public,
+        PromiseLawsTopic.Economy,
+        PromiseLawsTopic.Environment,
+        PromiseLawsTopic.Labor,
       ],
       statuses: [
         PromiseStatus.NoData,
@@ -155,14 +155,14 @@ export default Vue.extend({
   },
   head: createMetadata({ pageName: 'ดูคำสัญญา' }),
   computed: {
-    filteredPromises(): TrackingPromise[] {
+    filteredPromises(): TrackingPromiseLaws[] {
       return this.filters.length > 0
-        ? (promises as TrackingPromise[]).filter((promise) =>
+        ? (promises as TrackingPromiseLaws[]).filter((promise) =>
             this.filters.every((filter: Filter) =>
               checkFilterOnPromise(filter, promise)
             )
           )
-        : (promises as TrackingPromise[]);
+        : (promises as TrackingPromiseLaws[]);
     },
   },
   watch: {
@@ -187,7 +187,7 @@ export default Vue.extend({
     },
     setGroupFilter(
       type: FilterType.Status | FilterType.Topic,
-      value: PromiseStatus | PromiseTopic
+      value: PromiseStatus | PromiseLawsTopic
     ) {
       const existingFilter = this.filters.find(
         (filter) => filter.type === type
