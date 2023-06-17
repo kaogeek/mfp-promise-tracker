@@ -26,7 +26,7 @@ export interface TrackingPromiseLaws {
   id: number;
   party: string;
   title: string;
-  topic: PromiseLawsTopic;
+  category: PromiseLawsTopic;
   status: PromiseStatus;
   description: string;
   isNCPO: boolean;

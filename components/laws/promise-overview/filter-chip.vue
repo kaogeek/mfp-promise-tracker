@@ -27,12 +27,11 @@
 <script lang="ts">
 import Vue, { PropType } from 'vue';
 import { Filter, FilterType } from '@/models/filter';
+import { PromiseStatus, promiseStatusTextMap } from '@/models/promise';
 import {
-  PromiseStatus,
-  promiseStatusTextMap,
-  PromiseTopic,
-  promiseTopicTextMap,
-} from '@/models/promise';
+  PromiseLawsTopic,
+  promiseLawsTopicTextMap,
+} from '@/models/promise-laws';
 
 export default Vue.extend({
   name: 'FilterChips',
@@ -57,9 +56,9 @@ export default Vue.extend({
           return `สถานะ: ${promiseStatusTextMap.get(value as PromiseStatus)}`;
         case FilterType.Keyword:
           return `คำค้นหา: ${value}`;
-        case FilterType.Topic:
+        case FilterType.Category:
           return `ประเด็น${
-            promiseTopicTextMap.get(value as PromiseTopic)?.short
+            promiseLawsTopicTextMap.get(value as PromiseLawsTopic)?.short
           }`;
         default:
           return '';

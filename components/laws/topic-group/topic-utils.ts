@@ -1,19 +1,18 @@
+import { PromiseStatus, promiseStatusTextMap } from '@/models/promise';
 import {
-  TrackingPromise,
-  PromiseTopic,
-  promiseTopicTextMap,
-  promiseStatusTextMap,
-  PromiseStatus,
-} from '@/models/promise';
+  TrackingPromiseLaws,
+  PromiseLawsTopic,
+  promiseLawsTopicTextMap,
+} from '@/models/promise-laws';
 
 export interface Group {
   by: string;
-  where: PromiseTopic | PromiseStatus | string;
+  where: PromiseLawsTopic | PromiseStatus | string;
 }
 
 export const groupBy = (topic: String, status: String) => {
   if (topic !== '' && status === '') {
-    return { by: 'topic', where: topic as PromiseTopic };
+    return { by: 'topic', where: topic as PromiseLawsTopic };
   } else if (topic === '' && status !== '') {
     return { by: 'status', where: status as PromiseStatus };
   } else {
@@ -22,29 +21,31 @@ export const groupBy = (topic: String, status: String) => {
 };
 
 export const filteredPromise = (
-  promises: TrackingPromise[],
+  promises: TrackingPromiseLaws[],
   by: String,
-  where: PromiseTopic | PromiseStatus | String
-): TrackingPromise[] => {
+  where: PromiseLawsTopic | PromiseStatus | String
+): TrackingPromiseLaws[] => {
   if (by === 'topic') {
     return promises.filter(
-      (promise: TrackingPromise) => promise.topic === (where as PromiseTopic)
+      (promise: TrackingPromiseLaws) =>
+        promise.category === (where as PromiseLawsTopic)
     );
   } else if (by === 'status') {
     return promises.filter(
-      (promise: TrackingPromise) => promise.status === (where as PromiseStatus)
+      (promise: TrackingPromiseLaws) =>
+        promise.status === (where as PromiseStatus)
     );
   } else {
     return promises;
   }
 };
 
-export const getPromisesLength = (promises: TrackingPromise[]): number => {
+export const getPromisesLength = (promises: TrackingPromiseLaws[]): number => {
   return promises.length;
 };
 
-const getTopicTitle = (topic: PromiseTopic): string | undefined => {
-  return promiseTopicTextMap.get(topic)?.long;
+const getTopicTitle = (topic: PromiseLawsTopic): string | undefined => {
+  return promiseLawsTopicTextMap.get(topic)?.long;
 };
 
 const getStatusTitle = (status: PromiseStatus): string | undefined => {
@@ -56,9 +57,9 @@ export const getGroupTitle = (
   where: string
 ): string | undefined => {
   if (by === 'topic') {
-    const title = getTopicTitle(where as PromiseTopic);
+    const title = getTopicTitle(where as PromiseLawsTopic);
     if (title) {
-      return 'ประเด็น' + getTopicTitle(where as PromiseTopic);
+      return 'ประเด็น' + getTopicTitle(where as PromiseLawsTopic);
     } else {
       return '';
     }
@@ -125,7 +126,7 @@ export const pageNumberArray = (pageLength: number, currentPage: number) => {
 };
 
 export const currentPagePromises = (
-  promises: TrackingPromise[],
+  promises: TrackingPromiseLaws[],
   currentPage: number,
   promisePerPage: number
 ) => {

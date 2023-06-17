@@ -6,6 +6,7 @@ export enum FilterType {
   Status = 'status',
   Keyword = 'keyword',
   Topic = 'topic',
+  Category = 'category',
 }
 
 export type Filter =
@@ -19,5 +20,9 @@ export type Filter =
     }
   | {
       type: FilterType.Topic;
-      value: PromiseTopic | PromiseLawsTopic;
+      value: PromiseTopic;
+    }
+  | {
+      type: FilterType.Category;
+      value: PromiseLawsTopic;
     };

@@ -20,7 +20,7 @@ import { Filter, FilterType } from '@/models/filter';
 export const buttons = [
   { label: 'ดูตามสถานะ', type: FilterType.Status },
   // { label: 'ดูตามพรรค', type: FilterType.Party },
-  { label: 'ดูตามประเด็น', type: FilterType.Topic },
+  { label: 'ดูตามประเด็น', type: FilterType.Category },
 ];
 
 export default Vue.extend({

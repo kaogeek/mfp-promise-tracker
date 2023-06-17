@@ -53,7 +53,7 @@ import Vue, { PropType } from 'vue';
 import FilterChip from './filter-chip.vue';
 
 import { Filter, FilterType } from '@/models/filter';
-import { TrackingPromise } from '@/models/promise';
+import { TrackingPromiseLaws } from '@/models/promise-laws';
 
 export default Vue.extend({
   name: 'ActiveFilters',
@@ -62,7 +62,7 @@ export default Vue.extend({
   },
   props: {
     promises: {
-      type: Array as PropType<TrackingPromise[]>,
+      type: Array as PropType<TrackingPromiseLaws[]>,
       default: () => [],
     },
     filters: {
@@ -72,7 +72,7 @@ export default Vue.extend({
   },
   computed: {
     filterImages() {
-      return (this.promises as TrackingPromise[]).length === 0
+      return (this.promises as TrackingPromiseLaws[]).length === 0
         ? [
             {
               type: 'default',

@@ -40,10 +40,10 @@
 
         <div class="w-full flex flex-col md:px-6">
           <TopicGroup
-            v-for="group in groupBy === 'topic' ? topics : statuses"
+            v-for="group in groupBy === 'category' ? topics : statuses"
             :key="`${groupBy}-${group}`"
             class=""
-            :topic="groupBy === 'topic' ? group : undefined"
+            :topic="groupBy === 'category' ? group : undefined"
             :status="groupBy === 'status' ? group : undefined"
             :promises="filteredPromises"
             :promise-per-page="
@@ -74,7 +74,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import PromiseOverview from '@/components/laws/promise-overview/promise-overview.vue';
-import promises from '@/data/promises.json';
+import laws from '@/data/laws.json';
 import TopicGroup from '@/components/laws/topic-group/topic-group.vue';
 import FilterPanel from '@/components/laws/filter-panel/filter-panel.vue';
 import ToggleList, { ListOption } from '@/components/toggle/toggle-list.vue';
@@ -87,7 +87,7 @@ import { Filter, FilterType } from '~/models/filter';
 import { createMetadata } from '~/utils/metadata';
 
 enum GroupBy {
-  Topic = 'topic',
+  Category = 'category',
   Status = 'status',
 }
 
@@ -100,8 +100,8 @@ const checkFilterOnPromise = (
       return promise.party === value;
     case FilterType.Status:
       return promise.status === value;
-    case FilterType.Topic:
-      return promise.topic === value;
+    case FilterType.Category:
+      return promise.category === value;
     case FilterType.Keyword:
       return promise.title.includes(value);
     default:
@@ -140,11 +140,11 @@ export default Vue.extend({
         PromiseStatus.Done,
       ],
       filters: [] as Filter[],
-      groupBy: GroupBy.Topic as GroupBy,
+      groupBy: GroupBy.Category as GroupBy,
       groupByOptions: [
         {
           label: 'ตามประเด็น',
-          value: GroupBy.Topic,
+          value: GroupBy.Category,
         },
         {
           label: 'ตามสถานะ',
@@ -157,12 +157,12 @@ export default Vue.extend({
   computed: {
     filteredPromises(): TrackingPromiseLaws[] {
       return this.filters.length > 0
-        ? (promises as TrackingPromiseLaws[]).filter((promise) =>
+        ? (laws as TrackingPromiseLaws[]).filter((promise) =>
             this.filters.every((filter: Filter) =>
               checkFilterOnPromise(filter, promise)
             )
           )
-        : (promises as TrackingPromiseLaws[]);
+        : (laws as TrackingPromiseLaws[]);
     },
   },
   watch: {
@@ -186,7 +186,7 @@ export default Vue.extend({
       this.filters = this.filters.filter(({ type }) => filter.type !== type);
     },
     setGroupFilter(
-      type: FilterType.Status | FilterType.Topic,
+      type: FilterType.Status | FilterType.Category,
       value: PromiseStatus | PromiseLawsTopic
     ) {
       const existingFilter = this.filters.find(

@@ -4,7 +4,7 @@
       :id="`group-${groupBy.where}-header`"
       class="group-header"
       :class="
-        groupBy.by === 'topic'
+        groupBy.by === 'category'
           ? 'bg-status-proposed'
           : `bg-status-${groupBy.where}`
       "
@@ -80,7 +80,7 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue';
-import IconRight from './icon-right.vue';
+import IconRight from '../../explore/topic-group/icon-right.vue';
 import {
   Group,
   groupBy,
@@ -94,14 +94,15 @@ import {
 } from './topic-utils';
 import PromiseCard from '@/components/promise-card/promise-card.vue';
 import Button from '@/components/button.vue';
-import { TrackingPromise, PromiseTopic, PromiseStatus } from '@/models/promise';
+import { PromiseStatus } from '@/models/promise';
+import { PromiseLawsTopic, TrackingPromiseLaws } from '@/models/promise-laws';
 
 export default Vue.extend({
   name: 'TopicGroup',
   components: { PromiseCard, Button, IconRight },
   props: {
     topic: {
-      type: String as PropType<PromiseTopic>,
+      type: String as PropType<PromiseLawsTopic>,
       default: '',
     },
     status: {
@@ -109,7 +110,7 @@ export default Vue.extend({
       default: '',
     },
     promises: {
-      type: Array as PropType<TrackingPromise[]>,
+      type: Array as PropType<TrackingPromiseLaws[]>,
       default: () => [{}],
     },
     promisePerPage: {
@@ -129,7 +130,7 @@ export default Vue.extend({
     groupTitle(): string | undefined {
       return getGroupTitle(this.groupBy.by, this.groupBy.where);
     },
-    filteredPromise(): TrackingPromise[] {
+    filteredPromise(): TrackingPromiseLaws[] {
       return filteredPromise(
         this.$props.promises,
         this.groupBy.by,
@@ -151,7 +152,7 @@ export default Vue.extend({
     pageNumberArray(): (string | number)[] {
       return pageNumberArray(this.pageLength, this.currentPage);
     },
-    currentPagePromises(): TrackingPromise[] {
+    currentPagePromises(): TrackingPromiseLaws[] {
       return currentPagePromises(
         this.filteredPromise,
         this.currentPage,

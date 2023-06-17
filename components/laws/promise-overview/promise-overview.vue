@@ -28,7 +28,7 @@ import Vue, { PropType } from 'vue';
 import ActiveFilters from './active-filters.vue';
 import TabNavigation from './tab-navigation.vue';
 import TabBody from './tab-body.vue';
-import { TrackingPromise } from '@/models/promise';
+import { TrackingPromiseLaws } from '@/models/promise-laws';
 import { Filter, FilterType } from '@/models/filter';
 
 export default Vue.extend({
@@ -36,7 +36,7 @@ export default Vue.extend({
   components: { TabBody, TabNavigation, ActiveFilters },
   props: {
     promises: {
-      type: Array as PropType<TrackingPromise[]>,
+      type: Array as PropType<TrackingPromiseLaws[]>,
       default: () => [],
     },
     filters: {

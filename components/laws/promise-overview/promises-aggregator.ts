@@ -1,12 +1,14 @@
-import { FilterType } from '~/models/filter';
+import { FilterType } from '@/models/filter';
 import {
-  TrackingPromise,
   PromiseStatus,
-  promiseTopicTextMap,
   promiseStatusTextMap,
   promiseStatusOrder,
-  promiseTopicOrder,
-} from '~/models/promise';
+} from '@/models/promise';
+import {
+  TrackingPromiseLaws,
+  promiseLawsTopicTextMap,
+  promiseLawsTopicOrder,
+} from '@/models/promise-laws';
 
 export interface ChartData {
   status: PromiseStatus;
@@ -36,8 +38,8 @@ const parseChartDataFromStatusPair = (statuses: StatusPair): ChartData[] =>
     : [];
 
 export const groupPromisesBy = (
-  groupBy: FilterType.Party | FilterType.Status | FilterType.Topic,
-  promises: TrackingPromise[],
+  groupBy: FilterType.Party | FilterType.Status | FilterType.Category,
+  promises: TrackingPromiseLaws[],
   maxGroup = 9
 ): {
   max: number;
@@ -86,10 +88,10 @@ export const groupPromisesBy = (
               groupedPromiseObject[z.label].count -
               groupedPromiseObject[a.label].count
           )
-      : groupBy === FilterType.Topic
-      ? promiseTopicOrder.map<Chart>((key) => ({
-          label: promiseTopicTextMap.get(key)?.short as string,
-          icon: `topic/${key}_small.png`,
+      : groupBy === FilterType.Category
+      ? promiseLawsTopicOrder.map<Chart>((key) => ({
+          label: promiseLawsTopicTextMap.get(key)?.short as string,
+          icon: `topic/laws/${key}_small.png`,
           data: parseChartDataFromStatusPair(
             groupedPromiseObject[key]?.statuses
           ),

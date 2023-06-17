@@ -233,7 +233,7 @@ export default Vue.extend({
           value: this.selectedParty,
         },
         {
-          type: FilterType.Topic,
+          type: FilterType.Category,
           value: this.selectedTopic,
         },
         {
@@ -266,7 +266,7 @@ export default Vue.extend({
         case FilterType.Status:
           this.selectedStatus = value as PromiseStatus;
           break;
-        case FilterType.Topic:
+        case FilterType.Category:
           this.selectedTopic = value as PromiseLawsTopic;
           break;
         case FilterType.Keyword:

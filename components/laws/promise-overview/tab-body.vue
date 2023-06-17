@@ -64,10 +64,10 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue';
-import ChartItem from './chart-item.vue';
+import ChartItem from '../../explore/promise-overview/chart-item.vue';
 import { groupPromisesBy } from './promises-aggregator';
 import StatusExplanation from '@/components/explanation/status-explanation.vue';
-import { TrackingPromise } from '@/models/promise';
+import { TrackingPromiseLaws } from '@/models/promise-laws';
 import { FilterType } from '@/models/filter';
 
 export default Vue.extend({
@@ -75,12 +75,12 @@ export default Vue.extend({
   components: { ChartItem, StatusExplanation },
   props: {
     promises: {
-      type: Array as PropType<TrackingPromise[]>,
+      type: Array as PropType<TrackingPromiseLaws[]>,
       default: () => [],
     },
     groupBy: {
       type: String as PropType<
-        FilterType.Party | FilterType.Status | FilterType.Topic
+        FilterType.Party | FilterType.Status | FilterType.Category
       >,
       required: true,
     },
