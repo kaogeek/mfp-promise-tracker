@@ -1,4 +1,4 @@
-import { fetchNocoDB } from './helpers';
+import { extractsColValue, fetchAllPromise } from './helpers';
 
 export interface RawLink {
   name: string;
@@ -9,8 +9,8 @@ export interface RawImage {
   url?: string;
   path?: string;
   title: string;
-  mimetype: string;
-  size: number;
+  mimetype?: string;
+  size?: number;
 }
 
 export interface RawPromise {
@@ -26,41 +26,33 @@ export interface RawPromise {
   links: RawLink[];
 }
 
-const NAME_LINK_PREFIX = 'nameLink';
-
 export async function getRawPromises(): Promise<RawPromise[]> {
-  const parsed = await fetchNocoDB('/promises');
+  const parsed = await fetchAllPromise();
 
   const mapped = parsed.map((e): RawPromise => {
-    const linkKeys = Object.keys(e).filter(
-      (key: string) => key.startsWith(NAME_LINK_PREFIX) && e[key] !== ''
-    );
-    const links: RawLink[] = linkKeys.map(createRawLink(e));
+    const images: RawImage[] = [];
+    const links: RawLink[] = [];
+
+    images.push({
+      title: e.name,
+      url: extractsColValue('imageUrl', e.column_values),
+    });
 
     return {
       promiseId: Number(e.id),
-      party: e.party,
-      topic: e.topic,
-      promiseTitle: e.promiseTitle,
-      status: e.status,
-      explain: e.explain,
-      isNCPO: e.isNCPO,
-      images: e.images,
-      vdo: guardEmptiness(e.vdo),
+      party: extractsColValue('party', e.column_values),
+      topic: extractsColValue('topic', e.column_values),
+      promiseTitle: e.name,
+      status: extractsColValue('status', e.column_values),
+      explain: extractsColValue('detail', e.column_values),
+      isNCPO: false, // National Council for Peace and Order ?
+      images,
+      vdo: guardEmptiness(extractsColValue('vdo', e.column_values)),
       links,
     };
   });
 
   return mapped;
-}
-
-function createRawLink(data: {
-  [key: string]: string;
-}): (key: string) => RawLink {
-  return (key: string): RawLink => ({
-    name: data[key],
-    url: data[`urlLink${key.replace(NAME_LINK_PREFIX, '')}`],
-  });
 }
 
 export function guardEmptiness(value: string): string | null {

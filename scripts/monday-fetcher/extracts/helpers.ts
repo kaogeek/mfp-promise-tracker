@@ -14,7 +14,7 @@ export const LIMIT: number = 25;
  */
 const MONDAY_API_URL: string = 'https://api.monday.com/v2';
 
-interface ColumnValues {
+export interface ColumnValues {
   title: string;
   text: string;
 }
@@ -41,26 +41,20 @@ interface MondayResponse {
   account_id: number;
 }
 
-interface PageInfo {
-  totalRows: number;
-  page: number;
-  pageSize: number;
-  isFirstPage: boolean;
-  isLastPage: boolean;
-}
-
-type Row = { [key: string]: any };
-
-interface PublicViewResponse {
-  list: Row[];
-  pageInfo: PageInfo;
+export function extractsColValue(
+  colName: string,
+  colValues: ColumnValues[]
+): string {
+  return colValues.find((col) => col.title === colName)?.text ?? '';
 }
 
 /**
  * fetch board info from monday
- * @param {number} boardId - monday board's ID
+ * @param {number | string} boardId - monday board's ID
  */
-export async function fetchBoard(boardId: number): Promise<MondayResponse> {
+async function fetchBoardInfo(
+  boardId: number | string
+): Promise<MondayResponse> {
   const query = `query { boards (ids: ${boardId}) { id name items_count } }`;
   const response = await fetch(MONDAY_API_URL, {
     method: 'post',
@@ -76,15 +70,16 @@ export async function fetchBoard(boardId: number): Promise<MondayResponse> {
 }
 
 /**
- * fetch board's task info
- * @param {number} boardId - task item ID
+ * fetch board's task info aka promise
+ * @param {number | string} boardId - task item ID
  * @param {number} page - items on board's page
  */
-export async function fetchBoardTask(
-  boardId: number,
+async function fetchBoardPromise(
+  boardId: number | string,
   page: number
 ): Promise<MondayResponse> {
-  const query = `query { boards (ids: ${boardId}) { items (limit: ${LIMIT},page:${page}) { id name } } }`;
+  // todo: can `subitems` and `column_values` be optimize fetch to reduce API query cost?
+  const query = `query { boards (ids: ${boardId}) { items (limit: ${LIMIT},page:${page}) { id name column_values { title text } } } }`;
   const response = await fetch(MONDAY_API_URL, {
     method: 'post',
     headers: {
@@ -99,13 +94,14 @@ export async function fetchBoardTask(
 }
 
 /**
- * fectch board task details
- * @param {number} taskId - task item ID
- * @returns
+ * fectch board sub task details aka promise timelines
+ * @param {number | string} promiseId - task ID
  */
-export async function fetchTask(taskId: number) {
+export async function fetchPromiseTimelines(
+  promiseId: number | string
+): Promise<MondayResponse> {
   // todo: can `subitems` and `column_values` be optimize fetch to reduce API query cost?
-  const query = `query { items (ids: ${taskId}) { id name column_values { title text } subitems { id name column_values { title text } } } }`;
+  const query = `query { items (ids: ${promiseId}) { id name subitems { id name column_values { title text } } } }`;
   const response = await fetch(MONDAY_API_URL, {
     method: 'post',
     headers: {
@@ -119,38 +115,39 @@ export async function fetchTask(taskId: number) {
   return (await response.json()) as MondayResponse;
 }
 
-// TODO: fetch board data from monday
-export function fetchMondayData() {
+/**
+ * fetch all promise from board task
+ */
+export async function fetchAllPromise(): Promise<TaskItem[]> {
+  const boardId = process.env.MONDAY_BOARD_ID || '';
   // TODO: get board info
-  // TODO: get board's task items
-  // TODO: get task info
-  // TODO: get subtask items
+  const boardInfo = await fetchBoardInfo(boardId);
+
+  const rows: TaskItem[] = [];
+  let page: number = 1;
+
+  // get all board item aka promises
+  do {
+    const resp = await fetchBoardPromise(boardId, page++);
+    if (Array.isArray(resp.data.items) && resp.data.items.length !== 0) {
+      rows.push(...resp.data.items);
+    }
+  } while (rows.length < (boardInfo.data.boards?.[0]?.items_count ?? 0));
+
+  return rows;
 }
 
-export async function fetchNocoDB(resourcePath: string): Promise<Row[]> {
-  const apiPath = process.env.NOCODB_API_PATH;
-  const apiToken = process.env.NOCODB_API_TOKEN || '';
-
-  let currentPageInfo: PageInfo | null = null;
-  const rows: Row[] = [];
-
-  do {
-    const res = await fetch(
-      `${apiPath}${resourcePath}?limit=${LIMIT}&offset=${
-        currentPageInfo ? currentPageInfo.page * currentPageInfo.pageSize : 0
-      }`,
-      {
-        headers: {
-          'xc-token': apiToken,
-        },
-      }
-    );
-
-    const { list, pageInfo } = (await res.json()) as PublicViewResponse;
-
-    rows.push(...list);
-    currentPageInfo = pageInfo;
-  } while (!currentPageInfo?.isLastPage);
-
+export async function fetchAllTimelines(promises?: TaskItem[] | undefined) {
+  if (!Array.isArray(promises)) {
+    promises = await fetchAllPromise();
+  }
+  const rows: TaskItem[] = [];
+  for (const promise of promises) {
+    const resp = await fetchPromiseTimelines(promise.id);
+    if (Array.isArray(resp.data.items) && resp.data.items.length !== 0) {
+      const item = resp.data.items[0];
+      rows.push(item);
+    }
+  }
   return rows;
 }
