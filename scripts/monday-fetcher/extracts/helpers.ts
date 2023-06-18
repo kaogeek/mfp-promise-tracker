@@ -122,6 +122,7 @@ export async function fetchAllPromise(): Promise<TaskItem[]> {
   const boardId = process.env.MONDAY_BOARD_ID || '';
   // TODO: get board info
   const boardInfo = await fetchBoardInfo(boardId);
+  const itemCount = boardInfo.data.boards?.[0]?.items_count ?? 0;
 
   const rows: TaskItem[] = [];
   let page: number = 1;
@@ -129,10 +130,13 @@ export async function fetchAllPromise(): Promise<TaskItem[]> {
   // get all board item aka promises
   do {
     const resp = await fetchBoardPromise(boardId, page++);
-    if (Array.isArray(resp.data.items) && resp.data.items.length !== 0) {
-      rows.push(...resp.data.items);
+    if (Array.isArray(resp.data.boards) && resp.data.boards.length !== 0) {
+      const items = resp.data.boards[0].items;
+      if (Array.isArray(items)) {
+        rows.push(...items);
+      }
     }
-  } while (rows.length < (boardInfo.data.boards?.[0]?.items_count ?? 0));
+  } while (rows.length < itemCount);
 
   return rows;
 }
