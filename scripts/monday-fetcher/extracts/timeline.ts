@@ -1,4 +1,4 @@
-import { fetchNocoDB } from './helpers';
+import { extractsColValue, fetchAllTimelines } from './helpers';
 
 export interface RawTimeline {
   name: string;
@@ -10,31 +10,27 @@ export interface RawPromiseTimeline {
   timelines: RawTimeline[];
 }
 
-const NAME_PREFIX = 'name';
-
 export async function getRawPromiseTimelines(): Promise<RawPromiseTimeline[]> {
-  const parsed = await fetchNocoDB('/timelines');
+  const parsed = await fetchAllTimelines();
 
   const mapped = parsed.map((e): RawPromiseTimeline => {
-    const linkKeys = Object.keys(e).filter(
-      (key: string) => key.startsWith(NAME_PREFIX) && e[key] !== ''
-    );
-    const timelines: RawTimeline[] = linkKeys.map(createRawTimeline(e));
+    const timelines: RawTimeline[] = [];
+    if (Array.isArray(e.subitems) && e.subitems.length !== 0) {
+      for (const item of e.subitems) {
+        const form = extractsColValue('date', item.column_values);
+        if (timelines.length !== 0 && form !== '') {
+          timelines[timelines.length - 1].range +=
+            '-' + form.replaceAll('-', '/');
+        }
+        timelines.push({ name: item.name, range: form.replaceAll('-', '/') });
+      }
+    }
 
     return {
-      promiseId: Number(e.promiseId),
+      promiseId: Number(e.id),
       timelines,
     };
   });
 
   return mapped;
-}
-
-function createRawTimeline(data: {
-  [key: string]: string;
-}): (key: string) => RawTimeline {
-  return (key: string): RawTimeline => ({
-    name: data[key],
-    range: data[`timeline${key.replace(NAME_PREFIX, '')}`],
-  });
 }
