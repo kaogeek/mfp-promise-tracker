@@ -1,26 +1,26 @@
 import { RawPromise } from '../extracts/promise';
 import { RawPromiseTimeline } from '../extracts/timeline';
 import {
-  PromiseTopic,
-  PromiseStatus,
-  TrackingPromise,
-  PromiseTimeline,
-} from '~/models/promise';
+  PromiseLawsTopic,
+  TrackingPromiseLaws,
+  PromiseLawsTimeline,
+} from '~/models/promise-laws';
+import { PromiseStatus } from '~/models/promise';
 
 export function transformToTrackingPromises(
   rawPromises: RawPromise[],
   rawTimelines: RawPromiseTimeline[]
-): TrackingPromise[] {
+): TrackingPromiseLaws[] {
   return rawPromises.map((r) => {
     try {
-      const topic = mapTopic(r.topic);
+      const category = mapTopic(r.topic);
       const status = mapStatus(r.status);
 
       const timelines = (
         rawTimelines.find((tl) => tl.promiseId === r.promiseId)?.timelines || []
       )
         .filter(({ name, range }) => name && range)
-        .map((tl): PromiseTimeline => {
+        .map((tl): PromiseLawsTimeline => {
           const { from, to } = convertRangeToFromTo(tl.range);
           return {
             label: tl.name,
@@ -43,7 +43,8 @@ export function transformToTrackingPromises(
         id: r.promiseId,
         party: r.party,
         title: r.promiseTitle,
-        topic,
+        // topic,
+        category,
         status,
         description: r.explain,
         isNCPO: r.isNCPO,
@@ -58,9 +59,9 @@ export function transformToTrackingPromises(
   });
 }
 
-function mapTopic(value: string): PromiseTopic {
-  if (Object.values(PromiseTopic).includes(value as PromiseTopic)) {
-    return value as PromiseTopic;
+function mapTopic(value: string): PromiseLawsTopic {
+  if (Object.values(PromiseLawsTopic).includes(value as PromiseLawsTopic)) {
+    return value as PromiseLawsTopic;
   }
   throw new Error(`Cannot find topic to map "${value}"`);
 }
