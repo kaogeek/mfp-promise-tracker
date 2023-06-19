@@ -17,12 +17,16 @@ export async function getRawPromiseTimelines(): Promise<RawPromiseTimeline[]> {
     const timelines: RawTimeline[] = [];
     if (Array.isArray(e.subitems) && e.subitems.length !== 0) {
       for (const item of e.subitems) {
-        const form = extractsColValue('date', item.column_values);
-        if (timelines.length !== 0 && form !== '') {
-          timelines[timelines.length - 1].range +=
-            '-' + form.replaceAll('-', '/');
-        }
-        timelines.push({ name: item.name, range: form.replaceAll('-', '/') });
+        const form = extractsColValue(
+          'startDate',
+          item.column_values
+        ).replaceAll('-', '/');
+        const to = extractsColValue('endDate', item.column_values).replaceAll(
+          '-',
+          '/'
+        );
+        const timeRange = to ? form + '-' + to : form;
+        timelines.push({ name: item.name, range: timeRange });
       }
     }
 
