@@ -44,7 +44,7 @@ export default Vue.extend({
     return {
       routes: [
         { label: 'หน้าแรก', path: '/' },
-        { label: 'ดูคำสัญญา', path: '/explore' },
+        // { label: 'ดูคำสัญญา', path: '/explore' },
         { label: 'ติดตามร่างกฎหมาย', path: '/laws' },
         // { label: 'เกี่ยวกับโครงการ', path: '/about' },
       ],

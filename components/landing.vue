@@ -6,17 +6,20 @@
       class="absolute m-auto overflow-hidden max-w-none sm:max-w-full -top-16 sm:top-0"
       alt="landing_bg"
       :src="`${$config.path.images}/background/Background-Blur.png`"
-      style="z-index: 1; width: 100%"
+      style="z-index: 1;"
     />
     <div
       class="flex flex-col relative z-10 items-center text-center pt-16 sm:pt-32 pb-20"
     >
       <StatusAnimation />
       <h2 class="wv-h6 wv-font-bold wv-font-kondolar py-2">ติดตาม</h2>
-      <h1 class="wv-h4 wv-font-bold wv-font-kondolar text-orange-600 pb-2">
+      <h1 class="wv-h4 wv-font-bold wv-font-kondolar text-mfp-orange pb-2">
         45+ ร่างกฎหมาย<br class="block sm:hidden" /><br
           class="hidden sm:block"
-        />พรรคก้าวไกล
+        />
+      </h1>
+      <h1 class="wv-h4 wv-font-bold wv-font-kondolar pb-2">
+        พรรคก้าวไกล
       </h1>
       <h4 class="wv-b5 wv-font-kondolar px-4">
         ที่พร้อมยื่นทันทีหลังเปิดสภา

@@ -22,7 +22,8 @@ module.exports = {
         done: '#14B8A6',
       },
       mfp: {
-        bg: '#16263A'
+        bg: '#16263A',
+        orange: '#FF8E43'
       }
     },
     fontFamily: {},

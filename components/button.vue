@@ -61,11 +61,11 @@ export default Vue.extend({
         case 'primary-white':
         default:
           return [
-            'border-white',
+            'border-none',
             'text-white',
-            'bg-status-proposed',
-            'hover:border-ultramarine',
-            'hover:text-ultramarine',
+            'bg-mfp-orange',
+            'hover:border-mfp-orange',
+            'hover:text-mfp-orange',
             'hover:bg-white',
           ];
       }

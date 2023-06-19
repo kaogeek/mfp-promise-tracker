@@ -5,7 +5,7 @@
       <Landing />
       <div class="mt-10 mb-16 space-y-8 px-2">
         <StatusExplanation />
-        <PartyPromise />
+        <!-- <PartyPromise /> -->
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@ import Landing from '@/components/landing.vue';
 import StatusExplanation from '@/components/explanation/status-explanation.vue';
 // import ExplanationContainer from '@/components/explanation/explanation-container.vue';
 // import FormLink from '@/components/form-link.vue';
-import PartyPromise from '~/components/party/party-promise.vue';
+// import PartyPromise from '~/components/party/party-promise.vue';
 
 export default Vue.extend({
   name: 'IndexPage',
@@ -28,7 +28,7 @@ export default Vue.extend({
     StatusExplanation,
     // ExplanationContainer,
     // FormLink,
-    PartyPromise,
+    // PartyPromise,
   },
 });
 </script>
