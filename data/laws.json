@@ -23,11 +23,80 @@
     ]
   },
   {
+    "id": 2,
+    "party": "ก้าวไกล",
+    "title": "พ.ร.บ.คอมพิวเตอร์",
+    "category": "rights",
+    "status": "proposed",
+    "description": "แก้ไข พ.ร.บ.คอมพิเตอร์",
+    "isNCPO": false,
+    "imageUrl": "https://img.pptvhd36.com/thumbor/2023/05/17/a257f8c.avif",
+    "links": [
+      {
+        "name": "ตัวอย่างร่างกฎหมาย",
+        "url": "https://www.parliament.go.th/ewtadmin/ewt/parliament_parcy/more_news.php?cid=1822&filename=index08"
+      }
+    ],
+    "timelines": [
+      {
+        "label": "ยื่นเข้าสู่สภา",
+        "from": "2023-07-01"
+      },
+      { "label": "วาระ 1", "from": "2017-09-21", "to": "2023-07-02" }
+    ]
+  },
+  {
     "id": 3,
     "party": "ก้าวไกล",
     "title": "พ.ร.บ.คอมพิวเตอร์",
     "category": "rights",
-    "status": "nodata",
+    "status": "paused",
+    "description": "แก้ไข พ.ร.บ.คอมพิเตอร์",
+    "isNCPO": false,
+    "imageUrl": "https://img.pptvhd36.com/thumbor/2023/05/17/a257f8c.avif",
+    "links": [
+      {
+        "name": "ตัวอย่างร่างกฎหมาย",
+        "url": "https://www.parliament.go.th/ewtadmin/ewt/parliament_parcy/more_news.php?cid=1822&filename=index08"
+      }
+    ],
+    "timelines": [
+      {
+        "label": "ยื่นเข้าสู่สภา",
+        "from": "2023-07-01"
+      },
+      { "label": "วาระ 1", "from": "2017-09-21", "to": "2023-07-02" }
+    ]
+  },
+  {
+    "id": 4,
+    "party": "ก้าวไกล",
+    "title": "พ.ร.บ.คอมพิวเตอร์",
+    "category": "rights",
+    "status": "working",
+    "description": "แก้ไข พ.ร.บ.คอมพิเตอร์",
+    "isNCPO": false,
+    "imageUrl": "https://img.pptvhd36.com/thumbor/2023/05/17/a257f8c.avif",
+    "links": [
+      {
+        "name": "ตัวอย่างร่างกฎหมาย",
+        "url": "https://www.parliament.go.th/ewtadmin/ewt/parliament_parcy/more_news.php?cid=1822&filename=index08"
+      }
+    ],
+    "timelines": [
+      {
+        "label": "ยื่นเข้าสู่สภา",
+        "from": "2023-07-01"
+      },
+      { "label": "วาระ 1", "from": "2017-09-21", "to": "2023-07-02" }
+    ]
+  },
+  {
+    "id": 5,
+    "party": "ก้าวไกล",
+    "title": "พ.ร.บ.คอมพิวเตอร์",
+    "category": "rights",
+    "status": "done",
     "description": "แก้ไข พ.ร.บ.คอมพิเตอร์",
     "isNCPO": false,
     "imageUrl": "https://img.pptvhd36.com/thumbor/2023/05/17/a257f8c.avif",

@@ -10,14 +10,20 @@ module.exports = {
       black: '#000000',
       white: '#FFFFFF',
       gray: '#BBBBBB',
+      glass: '#2F3E51',
+      subglass: '#505E6C',
+      mfpblue: '#475569',
       ultramarine: '#3904E9',
       status: {
         nodata: '#8F8F8F',
-        proposed: '#FD9154',
+        proposed: '#0EA5E9',
         paused: '#E91E63',
-        working: '#F4C51F',
-        done: '#48DBDB',
+        working: '#EAB308',
+        done: '#14B8A6',
       },
+      mfp: {
+        bg: '#16263A'
+      }
     },
     fontFamily: {},
     fontSize: {},

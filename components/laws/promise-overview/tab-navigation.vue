@@ -3,8 +3,8 @@
     <button
       v-for="{ label, type } in displayButtons"
       :key="type"
-      :class="`wv-u4 wv-font-semibold text-white w-1/3 px-3 py-2 rounded-t border border-white ${
-        activeTab === type ? 'bg-status-proposed border-b-0' : 'bg-black'
+      :class="`wv-u4 wv-font-semibold text-white w-1/3 px-3 py-2 rounded-t border-white ${
+        activeTab === type ? 'bg-glass border-b-0' : 'bg-black'
       }`"
       @click="onChange(type)"
     >

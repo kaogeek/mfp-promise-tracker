@@ -3,9 +3,9 @@
     <div class="z-20 wv_navbar wv_navbar--white">
       <div class="wv_navbar__logo items-center">
         <a href="/" class="wv_navbar__logo__wevis">
-          <img src="/images/logo-9geek.png" class="wv_navbar__logo__addon"
+          <img src="/images/logo-mfp.png" class="wv_navbar__logo__addon"
         /></a>
-        <div class="px-4">ติดตาม 300 นโยบาย</div>
+        <div class="px-4">พรรคก้าวไกล</div>
       </div>
 
       <NuxtLink v-for="{ label, path } in routes" :key="path" :to="path">

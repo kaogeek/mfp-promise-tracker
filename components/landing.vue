@@ -1,36 +1,33 @@
 <template>
   <div
-    class="relative justify-center max-w-7xl w-full landing-bg overflow-hidden"
+    class="relative justify-center w-full landing-bg overflow-hidden"
   >
-    <!-- <img
-      class="absolute m-auto opacity-95 overflow-hidden max-w-none sm:max-w-full -top-16 sm:top-0"
+    <img
+      class="absolute m-auto overflow-hidden max-w-none sm:max-w-full -top-16 sm:top-0"
       alt="landing_bg"
-      :src="`${$config.path.images}/background/landing_bg.png`"
+      :src="`${$config.path.images}/background/Background-Blur.png`"
       style="z-index: 1; width: 100%"
-    /> -->
+    />
     <div
       class="flex flex-col relative z-10 items-center text-center pt-16 sm:pt-32 pb-20"
     >
       <StatusAnimation />
-      <h3 class="wv-h8 wv-font-bold wv-font-kondolar py-4">PROMISE TRACKER</h3>
-      <h1 class="wv-h4 wv-font-bold wv-font-kondolar pb-4">
-        ติดตาม 300 นโยบาย<br class="block sm:hidden" /><br
+      <h2 class="wv-h6 wv-font-bold wv-font-kondolar py-2">ติดตาม</h2>
+      <h1 class="wv-h4 wv-font-bold wv-font-kondolar text-orange-600 pb-2">
+        45+ ร่างกฎหมาย<br class="block sm:hidden" /><br
           class="hidden sm:block"
         />พรรคก้าวไกล
       </h1>
       <h4 class="wv-b5 wv-font-kondolar px-4">
-        มาติดตามนโยบายที่พรรคก้าวไกลได้หาเสียงไว้กันเถอะ!
+        ที่พร้อมยื่นทันทีหลังเปิดสภา
       </h4>
       <div class="flex flex-col items-center py-4 w-full px-4">
-        <div class="p-2 wv-font-anuphan wv-u5 bg-gray bg-opacity-10 rounded-sm">
-          อัปเดตล่าสุด {{ updatedDate }}
-        </div>
-        <NuxtLink class="mt-3 mb-6 mx-auto" to="/explore">
+        <NuxtLink class="mt-3 mb-6 mx-auto" to="/laws">
           <Button
             theme="primary-white"
             class="h-10 w-full sm:w-max wv-font-anuphan wv-u4 flex justify-center"
           >
-            <span>ติดตามนโยบาย</span>
+            <span>ร่างกฎหมายทั้งหมด</span>
             <svg
               width="12"
               height="12"
@@ -44,12 +41,15 @@
             </svg>
           </Button>
         </NuxtLink>
+        <div class="p-2 wv-font-anuphan wv-u5 bg-gray bg-opacity-10 rounded-sm">
+          อัปเดตล่าสุด {{ updatedDate }}
+        </div>
       </div>
-      <div class="w-5xl w-full px-4">
+      <!-- <div class="w-5xl w-full px-4">
         <div class="block w-full border-b border-white border-dashed h-1">
           {{ ` ` }}
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

@@ -14,8 +14,8 @@ export default Vue.extend({
 
 <style scoped>
 .status-animation {
-  width: 140px;
-  height: 100px;
+  width: 50px;
+  height: 100%;
   margin-bottom: 20px;
   /* background-image: url('/images/status/mfp-logo.png'); */
   /* background-size: contain; */

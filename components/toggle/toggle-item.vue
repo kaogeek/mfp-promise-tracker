@@ -1,7 +1,7 @@
 <template>
   <button
-    class="flex border px-2 py-1.5 space-x-1 items-center border-white rounded-sm wv-font-anuphan wv-font-semibold wv-u5"
-    :class="selected ? 'bg-white text-black' : 'bg-status-proposed text-white'"
+    class="flex px-2.5 py-2 rounded-lg space-x-1 items-center rounded-sm wv-font-anuphan wv-font-semibold wv-u5"
+    :class="selected ? 'bg-white text-black' : 'bg-subglass text-white'"
     @click="clickItem"
   >
     <svg

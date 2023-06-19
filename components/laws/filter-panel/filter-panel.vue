@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col bg-status-proposed lg:w-80 self-start fixed lg:sticky bottom-0 left-0 right-0 lg:h-auto lg:top-10 lg:mr-12 z-50 border-white border"
+    class="flex flex-col bg-glass lg:w-80 self-start fixed lg:sticky bottom-0 left-0 right-0 lg:h-auto lg:top-10 lg:mr-12 z-50 border-white border"
     :class="{ 'h-screen': isDialogOpenInMobile }"
   >
     <div class="flex lg:hidden flex-row text-white p-3 space-x-2 items-center">
@@ -72,7 +72,7 @@
 
         <p class="text-white wv-font-semibold">ค้นหาตามคีย์เวิร์ด</p>
         <div class="flex flex-row p-1 rounded-sm bg-white space-x-1">
-          <div class="bg-status-proposed rounded p-1.5">
+          <div class="bg-mfpblue rounded p-1.5">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
               <path
                 fill-rule="evenodd"

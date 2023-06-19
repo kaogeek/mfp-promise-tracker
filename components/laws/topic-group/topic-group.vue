@@ -5,7 +5,7 @@
       class="group-header"
       :class="
         groupBy.by === 'category'
-          ? 'bg-status-proposed'
+          ? 'bg-glass'
           : `bg-status-${groupBy.where}`
       "
     >

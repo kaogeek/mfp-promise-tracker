@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-row justify-center bg-black min-h-screen px-3 py-6 md:py-12"
+    class="flex flex-row justify-center bg-mfp min-h-screen px-3 py-6 md:py-12"
   >
     <div class="relative flex flex-row w-full max-w-7xl">
       <FilterPanel v-model="filters" />
@@ -207,3 +207,9 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style>
+.bg-mfp {
+  background: linear-gradient(180deg, #15385B 0%, #0E243A 7.98%);
+}
+</style>

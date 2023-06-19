@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <div class="flex flex-col items-center text-white px-6">
+    <div class="flex flex-col items-center text-white">
       <div class="gradient-background" />
       <Landing />
       <div class="mt-10 mb-16 space-y-8 px-2">
@@ -37,6 +37,6 @@ export default Vue.extend({
 .gradient-background {
   z-index: -5;
   /* @apply w-screen h-screen fixed top-0 bg-gradient-to-b from-ultramarine to-black; */
-  @apply w-screen h-screen fixed top-0 bg-gradient-to-b to-black from-status-proposed;
+  @apply w-screen h-screen fixed top-0 bg-mfp-bg;
 }
 </style>
