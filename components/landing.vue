@@ -1,12 +1,10 @@
 <template>
-  <div
-    class="relative justify-center w-full landing-bg overflow-hidden"
-  >
+  <div class="relative justify-center w-full landing-bg overflow-hidden">
     <img
-      class="absolute m-auto overflow-hidden max-w-none sm:max-w-full -top-16 sm:top-0"
+      class="absolute m-auto overflow-hidden w-full -top-16 sm:top-0"
       alt="landing_bg"
       :src="`${$config.path.images}/background/Background-Blur.png`"
-      style="z-index: 1;"
+      style="z-index: 1"
     />
     <div
       class="flex flex-col relative z-10 items-center text-center pt-16 sm:pt-32 pb-20"
@@ -18,12 +16,8 @@
           class="hidden sm:block"
         />
       </h1>
-      <h1 class="wv-h4 wv-font-bold wv-font-kondolar pb-2">
-        พรรคก้าวไกล
-      </h1>
-      <h4 class="wv-b5 wv-font-kondolar px-4">
-        ที่พร้อมยื่นทันทีหลังเปิดสภา
-      </h4>
+      <h1 class="wv-h4 wv-font-bold wv-font-kondolar pb-2">พรรคก้าวไกล</h1>
+      <h4 class="wv-b5 wv-font-kondolar px-4">ที่พร้อมยื่นทันทีหลังเปิดสภา</h4>
       <div class="flex flex-col items-center py-4 w-full px-4">
         <NuxtLink class="mt-3 mb-6 mx-auto" to="/laws">
           <Button

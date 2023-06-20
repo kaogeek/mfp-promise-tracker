@@ -23,8 +23,10 @@ module.exports = {
       },
       mfp: {
         bg: '#16263A',
-        orange: '#FF8E43'
-      }
+        orange: '#FF8E43',
+        blue: '#15385B',
+        darkblue: '#0E243A',
+      },
     },
     fontFamily: {},
     fontSize: {},

@@ -1,12 +1,15 @@
 <template>
-  <div v-if="option.isHeader" class="dropdown-item wv-font-anuphan wv-u4">
+  <div
+    v-if="option.isHeader"
+    class="dropdown-item wv-font-anuphan wv-u4 bg-mfp-blue hover:bg-mfp-blue hover:bg-opacity-50"
+  >
     <div class="header-dash" />
-    <span class="opacity-70">{{ option.label }}</span>
+    <span class="opacity-70 text-white">{{ option.label }}</span>
     <div class="header-dash" />
   </div>
   <button
     v-else
-    class="dropdown-item wv-font-anuphan wv-u4 hover:bg-gray hover:bg-opacity-20"
+    class="dropdown-item wv-font-anuphan wv-u4 bg-mfp-darkblue hover:bg-mfp-darkblue hover:bg-opacity-50"
     @click="click"
   >
     <img
@@ -14,7 +17,7 @@
       class="w-5 h-5 rounded-full border border-gray border-opacity-10"
       :src="`${$config.path.images}${option.iconUrl}`"
     />
-    <span>{{ option.label }}</span>
+    <span class="text-white">{{ option.label }}</span>
   </button>
 </template>
 

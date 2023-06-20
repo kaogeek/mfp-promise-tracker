@@ -14,6 +14,8 @@ import Vue, { PropType } from 'vue';
 type ButtonTheme =
   | 'primary-white'
   | 'primary-blue'
+  | 'primary-orange'
+  | 'primary-gray'
   | 'secondary-white'
   | 'secondary-blue';
 
@@ -56,6 +58,26 @@ export default Vue.extend({
             'hover:border-white',
             'hover:text-white',
             'hover:bg-status-proposed',
+          ];
+
+        case 'primary-orange':
+          return [
+            'border-white',
+            'text-mfp-orange',
+            'bg-white',
+            'hover:border-white',
+            'hover:text-white',
+            'hover:bg-mfp-orange',
+          ];
+
+        case 'primary-gray':
+          return [
+            'border-mfpblue',
+            'text-mfpblue',
+            'bg-white',
+            'hover:border-white',
+            'hover:text-white',
+            'hover:bg-mfpblue',
           ];
 
         case 'primary-white':
