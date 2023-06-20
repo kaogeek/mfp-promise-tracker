@@ -43,28 +43,29 @@
         <div class="w-4 mr-2">
           <img
             :id="`single-card-${promise.id}-topic-icon`"
-            :src="`${$config.path.images}/topic/${promise.topic}_small.png`"
-            :alt="`${promise.topic}`"
+            :src="`${$config.path.images}/topic/laws-brown/${promise.category}_small.png`"
+            :alt="`${promise.category}`"
           />
         </div>
         <p :id="`single-card-${promise.id}-topic-name`">
-          {{ getTopic(promise.topic) }}
+          {{ getTopic(promise.category) }}
+          {{ promise.category }}
         </p>
       </div>
       <div class="flex px-3">
         <div class="w-4 mr-2">
-          <img
+          <!-- <img
             v-if="promise.party"
             :id="`single-card-${promise.id}-party-logo`"
             :src="`${$config.path.images}/party/${
               promise.party.split('/')[0]
             }.jpg`"
             :alt="`${promise.party}`"
-          />
+          /> -->
         </div>
-        <p :id="`single-card-${promise.id}-party-name`">
+        <!-- <p :id="`single-card-${promise.id}-party-name`">
           {{ promise.party }}
-        </p>
+        </p> -->
       </div>
     </div>
     <div

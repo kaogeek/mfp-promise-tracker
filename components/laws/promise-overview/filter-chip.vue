@@ -6,7 +6,7 @@
       <img
         v-if="topic !== 'keyword'"
         class="h-4 w-4 object-cover rounded-full shadow-xl"
-        :src="`${$config.path.images}/${topic}/${icon}`"
+        :src="`${$config.path.images}/laws/${icon}`"
         :alt="text"
       />
     </div>

@@ -73,7 +73,7 @@ describe('Style handling', () => {
 describe('Selection handling', () => {
   const expectedText = [
     { id: 0, text: 'ไม่พบความเคลื่อนไหว' },
-    { id: 1, text: 'นำเข้า ครม.' },
+    { id: 1, text: 'ยื่นเข้าสภา' },
     { id: 2, text: 'ถูกระงับ' },
     { id: 3, text: 'กำลังดำเนินการ' },
     { id: 4, text: 'สำเร็จ' },

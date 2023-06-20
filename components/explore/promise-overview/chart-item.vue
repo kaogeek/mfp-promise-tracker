@@ -4,10 +4,10 @@
       <img
         v-if="icon"
         :src="`${$config.path.images}/${icon}`"
-        class="w-4 h-4 rounded-full"
+        class="w-4 h-4"
         :alt="label"
       />
-      <p class="wv-u5 wv-font-semibold">{{ label }} ({{ count }})</p>
+      <p class="wv-u5 wv-font-semibold pl-1">{{ label }} ({{ count }})</p>
     </div>
     <div
       class="flex flex-row flex-1 space-x-1 wv-u5 wv-font-semibold items-center"

@@ -88,7 +88,7 @@ export const promiseTopicTextMap = new Map<
 
 export const promiseStatusTextMap = new Map<PromiseStatus, string>([
   [PromiseStatus.NoData, 'ไม่พบความเคลื่อนไหว'],
-  [PromiseStatus.Proposed, 'นำเข้า ครม.'],
+  [PromiseStatus.Proposed, 'ยื่นเข้าสภา'],
   [PromiseStatus.Paused, 'ถูกระงับ'],
   [PromiseStatus.Working, 'กำลังดำเนินการ'],
   [PromiseStatus.Done, 'สำเร็จ'],

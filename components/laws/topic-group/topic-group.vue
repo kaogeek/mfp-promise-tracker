@@ -12,6 +12,7 @@
       <div class="flex items-center">
         <img
           class="w-8 my-2 ml-6 mr-2"
+          style="width: 18px; height: 18px;"
           :src="`images/${groupBy.by}/${groupBy.where}_small.png`"
           :alt="groupBy.where"
         />
@@ -20,7 +21,7 @@
         </p>
       </div>
       <p class="flex flex-shrink-0 wv-u4 wv-font-semibold wv-font-anuphan pr-4">
-        {{ promisesLength }} คำสัญญา
+        {{ promisesLength }} ร่างกฎหมาย
       </p>
     </div>
     <PromiseCard
