@@ -1,6 +1,6 @@
-export const BASE_TITLE = 'MFP Promise Tracker';
-const DESCRIPTION = 'ติดตาม 300+ นโยบายจากพรรคก้าวไกล';
-export const DEFAULT_OG_IMAGE = '';
+export const BASE_TITLE = 'ติดตาม 45+ ร่างกฎหมาย พรรคก้าวไกล';
+const DESCRIPTION = 'ที่ก้าวไกลพร้อมยื่นทันทีหลังเปิดสภา';
+export const DEFAULT_OG_IMAGE = 'https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/og/default.jpg';
 
 interface createMetadataParams {
   pageName?: string;
