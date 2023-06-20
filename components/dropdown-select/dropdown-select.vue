@@ -2,7 +2,7 @@
   <div class="relative">
     <button
       id="select-box"
-      class="flex w-full space-x-1 justify-between items-center py-2.5 px-2 rounded-sm wv-font-anuphan wv-font-semibold wv-u5 border-white border"
+      class="flex w-full space-x-1 justify-between items-center py-2.5 px-2 rounded-lg wv-font-anuphan wv-font-semibold wv-u5 border-white border"
       :class="selectClasses"
       @click="toggleSelecting"
     >
