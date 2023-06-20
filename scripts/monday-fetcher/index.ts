@@ -12,7 +12,7 @@ async function fetchData() {
     await getRawPromiseTimelines()
   );
   const parties = transformToParties(await getRawParties());
-  await writeFile('./data/promises.json', JSON.stringify(promises, null, 2));
+  await writeFile('./data/laws.json', JSON.stringify(promises, null, 2));
   await writeFile('./data/parties.json', JSON.stringify(parties, null, 2));
   await writeFile(
     './data/metadata.json',
