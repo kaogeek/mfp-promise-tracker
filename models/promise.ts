@@ -10,6 +10,17 @@ export enum PromiseTopic {
   Economics = 'economics',
 }
 
+export enum PromiseLawsTopic {
+  Politics = 'politics',
+  Rights = 'rights',
+  Land = 'land',
+  Government = 'government',
+  Public = 'public',
+  Economy = 'economy',
+  Environment = 'environment',
+  Labor = 'labor',
+}
+
 export enum PromiseStatus {
   NoData = 'nodata',
   Proposed = 'proposed',
@@ -84,6 +95,46 @@ export const promiseTopicTextMap = new Map<
   ],
   [PromiseTopic.Health, { long: 'สุขภาพดีทั้งกาย-ใจ', short: 'สุขภาพ' }],
   [PromiseTopic.Economics, { long: 'เศรษฐกิจโตเพื่อทุกคน', short: 'เศรษฐกิจ' }],
+]);
+
+export const promiseLawsTopicOrder: PromiseLawsTopic[] = [
+  PromiseLawsTopic.Politics,
+  PromiseLawsTopic.Rights,
+  PromiseLawsTopic.Land,
+  PromiseLawsTopic.Government,
+  PromiseLawsTopic.Public,
+  PromiseLawsTopic.Economy,
+  PromiseLawsTopic.Environment,
+  PromiseLawsTopic.Labor,
+];
+
+export const promiseLawsTopicTextMap = new Map<
+  PromiseLawsTopic,
+  { long: string; short: string }
+>([
+  [PromiseLawsTopic.Politics, { long: 'กฎหมายการเมือง', short: 'การเมือง' }],
+  [
+    PromiseLawsTopic.Rights,
+    { long: 'กฎหมายสิทธิเสรีภาพ', short: 'สิทธิเสรีภาพ' },
+  ],
+  [
+    PromiseLawsTopic.Land,
+    { long: 'กฎหมายปฎิรูปที่ดิน', short: 'ปฎิรูปที่ดิน' },
+  ],
+  [
+    PromiseLawsTopic.Government,
+    { long: 'กฎหมายปฏิรูประบบบริหารราชการ', short: 'ระบบบริหารราชการ' },
+  ],
+  [
+    PromiseLawsTopic.Public,
+    { long: 'กฎหมายบริการสาธารณะ', short: 'บริการสาธารณะ' },
+  ],
+  [PromiseLawsTopic.Economy, { long: 'กฎหมายเศรษฐกิจ', short: 'เศรษฐกิจ' }],
+  [
+    PromiseLawsTopic.Environment,
+    { long: 'กฎหมายสิ่งแวดล้อม', short: 'สิ่งแวดล้อม' },
+  ],
+  [PromiseLawsTopic.Labor, { long: 'กฎหมายแรงงาน', short: 'แรงงาน' }],
 ]);
 
 export const promiseStatusTextMap = new Map<PromiseStatus, string>([

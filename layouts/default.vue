@@ -21,14 +21,18 @@
     <div class="flex-1">
       <Nuxt />
     </div>
-    <div class="wv_footer wv_footer--white">
+    <div class="wv_footer wv_footer--white justify-between">
       <a
         target="_blank"
         rel="noreferrer noopener"
         href="https://discord.gg/kaogeek"
-        class="wv_footer__logo"
-        >kaogeek</a
+        class=""
+        >
+          <img src="/images/logo-9geek.png" class="wv_navbar__logo__addon"
+        />
+        </a
       >
+      <div>Copyright © 2023 All Rights Reserved</div>
     </div>
   </div>
 </template>
