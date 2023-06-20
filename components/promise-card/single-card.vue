@@ -49,23 +49,7 @@
         </div>
         <p :id="`single-card-${promise.id}-topic-name`">
           {{ getTopic(promise.category) }}
-          {{ promise.category }}
         </p>
-      </div>
-      <div class="flex px-3">
-        <div class="w-4 mr-2">
-          <!-- <img
-            v-if="promise.party"
-            :id="`single-card-${promise.id}-party-logo`"
-            :src="`${$config.path.images}/party/${
-              promise.party.split('/')[0]
-            }.jpg`"
-            :alt="`${promise.party}`"
-          /> -->
-        </div>
-        <!-- <p :id="`single-card-${promise.id}-party-name`">
-          {{ promise.party }}
-        </p> -->
       </div>
     </div>
     <div
@@ -106,8 +90,10 @@ import {
   TrackingPromise,
   PromiseStatus,
   promiseStatusTextMap,
-  PromiseTopic,
-  promiseTopicTextMap,
+  // PromiseTopic,
+  // promiseTopicTextMap,
+  PromiseLawsTopic,
+  promiseLawsTopicTextMap
 } from '@/models/promise';
 
 export default Vue.extend({
@@ -142,8 +128,8 @@ export default Vue.extend({
     getStatus(status: PromiseStatus) {
       return promiseStatusTextMap.get(status as PromiseStatus);
     },
-    getTopic(topic: PromiseTopic) {
-      return promiseTopicTextMap.get(topic as PromiseTopic)?.short;
+    getTopic(topic: PromiseLawsTopic) {
+      return promiseLawsTopicTextMap.get(topic as PromiseLawsTopic)?.short;
     },
   },
 });
