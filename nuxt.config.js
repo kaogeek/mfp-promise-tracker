@@ -15,7 +15,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'ติดตาม 45 ร่างกฎหมาย จากพรรคก้าวไกลที่ยื่นสู่สภา' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'ติดตาม 45 ร่างกฎหมาย จากพรรคก้าวไกลที่ยื่นสู่สภา',
+      },
       { name: 'format-detection', content: 'telephone=no' },
       ...meta,
     ],
