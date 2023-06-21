@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="flex flex-col p-4 space-y-4 bg-glass rounded-b-xl md:rounded-bl-none md:h-80"
+      class="flex flex-col p-4 space-y-4 bg-glass border border-white border-opacity-20 md:rounded-tr-xl rounded-b-xl md:rounded-bl-none md:h-80"
     >
       <div class="flex-1 flex flex-col space-y-2 m-2">
         <ChartItem

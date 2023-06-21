@@ -1,5 +1,7 @@
 <template>
-  <div class="flex-1 md:h-80 bg-white flex flex-col py-10 px-6 rounded-t-xl">
+  <div
+    class="flex-1 md:h-80 bg-white flex flex-col py-10 px-6 rounded-t-xl outline-none md:mb-0 -mb-1"
+  >
     <div class="flex flex-col mb-4">
       <div
         v-for="({ type, value, src }, i) in filterImages"

@@ -1,11 +1,8 @@
 <template>
-  <div class="relative justify-center w-full landing-bg overflow-hidden">
-    <img
-      class="absolute m-auto overflow-hidden -top-16 sm:top-0"
-      alt="landing_bg"
-      :src="`${$config.path.images}/background/Background-Blur.png`"
-      style="z-index: 1; width: 100%; height: 100%; object-fit: cover;"
-    />
+  <div
+    class="relative justify-center w-full landing-bg bg-cover bg-center overflow-hidden"
+    :style="`background-image: url(${$config.path.images}/background/Background-Blur.png)`"
+  >
     <div
       class="flex flex-col relative z-10 items-center text-center pt-16 sm:pt-32 pb-20"
     >

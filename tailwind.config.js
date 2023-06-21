@@ -4,7 +4,11 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        '1px': '1px',
+      },
+    },
     colors: {
       transparent: 'transparent',
       black: '#000000',

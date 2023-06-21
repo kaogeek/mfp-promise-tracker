@@ -4,7 +4,7 @@
       <div class="wv_navbar__logo items-center">
         <a href="/" class="flex items-center">
           <img src="/images/logo-mfp.png" class="wv_navbar__logo__addon" />
-          <div class="px-4">พรรคก้าวไกล</div>
+          <div class="px-4 whitespace-nowrap">พรรคก้าวไกล</div>
         </a>
       </div>
 
