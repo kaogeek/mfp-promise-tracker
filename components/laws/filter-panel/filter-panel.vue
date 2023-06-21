@@ -71,7 +71,7 @@
         <ToggleList v-model="selectedStatus" :options="statusOptions" />
 
         <p class="text-white wv-font-semibold">ค้นหาตามคีย์เวิร์ด</p>
-        <div class="flex flex-row p-1 rounded-sm bg-white space-x-1">
+        <div class="flex flex-row p-1 rounded-lg bg-white space-x-1">
           <div class="bg-mfpblue rounded p-1.5">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
               <path
@@ -95,7 +95,7 @@
       </div>
 
       <div class="flex flex-row space-x-2 p-3 border-white border-t">
-        <Button class="flex-1" theme="primary-blue" @click="reset">
+        <Button class="flex-1 rounded-lg" theme="primary-gray" @click="reset">
           <svg
             width="20"
             height="20"
@@ -116,7 +116,7 @@
           </svg>
           <span>ยกเลิกทั้งหมด</span>
         </Button>
-        <Button class="flex-1" theme="primary-blue" @click="apply">
+        <Button class="flex-1 rounded-lg" theme="primary-orange" @click="apply">
           <svg
             width="20"
             height="20"

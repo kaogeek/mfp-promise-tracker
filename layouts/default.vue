@@ -2,10 +2,10 @@
   <div class="flex flex-col min-h-screen wv-font-anuphan wv-b5">
     <div class="z-20 wv_navbar wv_navbar--white">
       <div class="wv_navbar__logo items-center">
-        <a href="/" class="wv_navbar__logo__wevis">
-          <img src="/images/logo-mfp.png" class="wv_navbar__logo__addon"
-        /></a>
-        <div class="px-4">พรรคก้าวไกล</div>
+        <a href="/" class="flex items-center">
+          <img src="/images/logo-mfp.png" class="wv_navbar__logo__addon" />
+          <div class="px-4">พรรคก้าวไกล</div>
+        </a>
       </div>
 
       <NuxtLink v-for="{ label, path } in routes" :key="path" :to="path">
@@ -21,18 +21,22 @@
     <div class="flex-1">
       <Nuxt />
     </div>
-    <div class="wv_footer wv_footer--white justify-between">
-      <a
-        target="_blank"
-        rel="noreferrer noopener"
-        href="https://discord.gg/kaogeek"
-        class=""
+    <div class="wv_footer wv_footer--white">
+      <div class="flex">
+        <a
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://discord.gg/kaogeek"
+          class="wv_footer__logo flex gap-4"
         >
-          <img src="/images/logo-9geek.png" class="wv_navbar__logo__addon"
-        />
-        </a
-      >
-      <div>Copyright © 2023 All Rights Reserved</div>
+          <img
+            src="/images/logo-9geek.png"
+            alt="logo-9geek-footer"
+            width="50"
+            height="50"
+          />
+        </a>
+      </div>
     </div>
   </div>
 </template>
