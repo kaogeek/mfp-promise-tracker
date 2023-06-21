@@ -21,7 +21,7 @@
           v-for="item in data"
           :key="item.status"
           :style="{ width: `${Math.round((item.count / count) * 100)}%` }"
-          :class="`bg-status-${item.status}`"
+          :class="`bg-status-${item.status}` + ' rounded'"
         />
       </div>
       <span>{{ percentage }}%</span>
