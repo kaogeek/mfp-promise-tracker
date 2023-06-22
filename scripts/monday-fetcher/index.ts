@@ -8,6 +8,7 @@ import { transformToParties } from './transforms/party';
 
 async function fetchData() {
   const promises = transformToTrackingPromises(
+    // @todo getRawPromises can contain data that present in getRawPromiseTimelines so that can reduce fetch loop
     await getRawPromises(),
     await getRawPromiseTimelines()
   );

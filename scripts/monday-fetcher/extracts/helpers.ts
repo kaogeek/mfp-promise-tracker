@@ -78,7 +78,7 @@ async function fetchBoardPromise(
   boardId: number | string,
   page: number
 ): Promise<MondayResponse> {
-  // todo: can `subitems` and `column_values` be optimize fetch to reduce API query cost?
+  // @todo can `subitems` and `column_values` be optimize fetch to reduce API query cost?
   const query = `query { boards (ids: ${boardId}) { items (limit: ${LIMIT},page:${page}) { id name column_values { title text } } } }`;
   const response = await fetch(MONDAY_API_URL, {
     method: 'post',
@@ -100,7 +100,7 @@ async function fetchBoardPromise(
 export async function fetchPromiseTimelines(
   promiseId: number | string
 ): Promise<MondayResponse> {
-  // todo: can `subitems` and `column_values` be optimize fetch to reduce API query cost?
+  // @todo may be deprecated by fetchBoardPromise
   const query = `query { items (ids: ${promiseId}) { id name subitems { id name column_values { title text } } } }`;
   const response = await fetch(MONDAY_API_URL, {
     method: 'post',
@@ -120,7 +120,6 @@ export async function fetchPromiseTimelines(
  */
 export async function fetchAllPromise(): Promise<TaskItem[]> {
   const boardId = process.env.MONDAY_BOARD_ID || '';
-  // TODO: get board info
   const boardInfo = await fetchBoardInfo(boardId);
   const itemCount = boardInfo.data.boards?.[0]?.items_count ?? 0;
 
@@ -129,6 +128,7 @@ export async function fetchAllPromise(): Promise<TaskItem[]> {
 
   // get all board item aka promises
   do {
+    // @todo fetchBoardPromise can contain timeline data to save fetch count
     const resp = await fetchBoardPromise(boardId, page++);
     if (Array.isArray(resp.data.boards) && resp.data.boards.length !== 0) {
       const items = resp.data.boards[0].items;
@@ -141,6 +141,7 @@ export async function fetchAllPromise(): Promise<TaskItem[]> {
   return rows;
 }
 
+// @todo fetchAllTimelines can be deprecated by fetchBoardPromise
 export async function fetchAllTimelines(promises?: TaskItem[] | undefined) {
   if (!Array.isArray(promises)) {
     promises = await fetchAllPromise();
