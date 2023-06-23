@@ -1,4 +1,4 @@
-import { extractsColValue, fetchAllTimelines } from './helpers';
+import { TaskItem, extractsColValue } from './helpers';
 
 export interface RawTimeline {
   name: string;
@@ -10,9 +10,9 @@ export interface RawPromiseTimeline {
   timelines: RawTimeline[];
 }
 
-export async function getRawPromiseTimelines(): Promise<RawPromiseTimeline[]> {
-  const parsed = await fetchAllTimelines();
-
+export function getRawPromiseTimelines(
+  parsed: TaskItem[]
+): RawPromiseTimeline[] {
   const mapped = parsed.map((e): RawPromiseTimeline => {
     const timelines: RawTimeline[] = [];
     if (Array.isArray(e.subitems) && e.subitems.length !== 0) {

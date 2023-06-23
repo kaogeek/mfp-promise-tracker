@@ -14,12 +14,12 @@ export const LIMIT: number = 25;
  */
 const MONDAY_API_URL: string = 'https://api.monday.com/v2';
 
-export interface ColumnValues {
+interface ColumnValues {
   title: string;
   text: string;
 }
 
-interface TaskItem {
+export interface TaskItem {
   id: number;
   name: string;
   column_values: ColumnValues[];
@@ -79,29 +79,7 @@ async function fetchBoardPromise(
   page: number
 ): Promise<MondayResponse> {
   // @todo can `subitems` and `column_values` be optimize fetch to reduce API query cost?
-  const query = `query { boards (ids: ${boardId}) { items (limit: ${LIMIT},page:${page}) { id name column_values { title text } } } }`;
-  const response = await fetch(MONDAY_API_URL, {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: process.env.MONDAY_API_TOKEN || '',
-    },
-    body: JSON.stringify({
-      query,
-    }),
-  });
-  return (await response.json()) as MondayResponse;
-}
-
-/**
- * fectch board sub task details aka promise timelines
- * @param {number | string} promiseId - task ID
- */
-export async function fetchPromiseTimelines(
-  promiseId: number | string
-): Promise<MondayResponse> {
-  // @todo may be deprecated by fetchBoardPromise
-  const query = `query { items (ids: ${promiseId}) { id name subitems { id name column_values { title text } } } }`;
+  const query = `query { boards (ids: ${boardId}) { items (limit: ${LIMIT},page:${page}) { id name column_values { title text } subitems { id name column_values { title text } } } } }`;
   const response = await fetch(MONDAY_API_URL, {
     method: 'post',
     headers: {
@@ -128,7 +106,6 @@ export async function fetchAllPromise(): Promise<TaskItem[]> {
 
   // get all board item aka promises
   do {
-    // @todo fetchBoardPromise can contain timeline data to save fetch count
     const resp = await fetchBoardPromise(boardId, page++);
     if (Array.isArray(resp.data.boards) && resp.data.boards.length !== 0) {
       const items = resp.data.boards[0].items;
@@ -138,21 +115,5 @@ export async function fetchAllPromise(): Promise<TaskItem[]> {
     }
   } while (rows.length < itemCount);
 
-  return rows;
-}
-
-// @todo fetchAllTimelines can be deprecated by fetchBoardPromise
-export async function fetchAllTimelines(promises?: TaskItem[] | undefined) {
-  if (!Array.isArray(promises)) {
-    promises = await fetchAllPromise();
-  }
-  const rows: TaskItem[] = [];
-  for (const promise of promises) {
-    const resp = await fetchPromiseTimelines(promise.id);
-    if (Array.isArray(resp.data.items) && resp.data.items.length !== 0) {
-      const item = resp.data.items[0];
-      rows.push(item);
-    }
-  }
   return rows;
 }

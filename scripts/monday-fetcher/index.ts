@@ -7,11 +7,10 @@ import { transformToTrackingPromises } from './transforms/promise';
 import { transformToParties } from './transforms/party';
 
 async function fetchData() {
-  const promises = transformToTrackingPromises(
-    // @todo getRawPromises can contain data that present in getRawPromiseTimelines so that can reduce fetch loop
-    await getRawPromises(),
-    await getRawPromiseTimelines()
-  );
+  const { rawPromises, taskItems } = await getRawPromises();
+  const rawTimelines = getRawPromiseTimelines(taskItems);
+  // @todo transformToTrackingPromises need to optimize for reduce data transforms
+  const promises = transformToTrackingPromises(rawPromises, rawTimelines);
   const parties = transformToParties(await getRawParties());
   await writeFile('./data/laws.json', JSON.stringify(promises, null, 2));
   await writeFile('./data/parties.json', JSON.stringify(parties, null, 2));

@@ -1,4 +1,4 @@
-import { extractsColValue, fetchAllPromise } from './helpers';
+import { TaskItem, extractsColValue, fetchAllPromise } from './helpers';
 
 export interface RawLink {
   name: string;
@@ -26,7 +26,10 @@ export interface RawPromise {
   links: RawLink[];
 }
 
-export async function getRawPromises(): Promise<RawPromise[]> {
+export async function getRawPromises(): Promise<{
+  rawPromises: RawPromise[];
+  taskItems: TaskItem[];
+}> {
   const parsed = await fetchAllPromise();
 
   const mapped = parsed.map((e): RawPromise => {
@@ -52,7 +55,7 @@ export async function getRawPromises(): Promise<RawPromise[]> {
     };
   });
 
-  return mapped;
+  return { rawPromises: mapped, taskItems: parsed };
 }
 
 export function guardEmptiness(value: string): string | null {
