@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import fetch from 'node-fetch';
 
 /**
@@ -13,6 +14,8 @@ export const LIMIT: number = 25;
  * @see https://developer.monday.com/api-reference/docs
  */
 const MONDAY_API_URL: string = 'https://api.monday.com/v2';
+// eslint-disable-next-line promise/param-names
+const SLEEP = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 interface ColumnValues {
   title: string;
@@ -34,11 +37,15 @@ interface BoardInfo {
 }
 
 interface MondayResponse {
+  status_code: number;
   data: {
     boards?: BoardInfo[];
     items?: TaskItem[];
   };
   account_id: number;
+  error_code?: string;
+  error_message?: string;
+  errors?: string[];
 }
 
 export function extractsColValue(
@@ -107,6 +114,17 @@ export async function fetchAllPromise(): Promise<TaskItem[]> {
   // get all board item aka promises
   do {
     const resp = await fetchBoardPromise(boardId, page++);
+    // @todo optimize fetchBoardPromise to reduce query cost
+    // workaround delay api rate limit
+    if (resp.status_code === 429) {
+      page--;
+      console.log(
+        `${resp.error_code} at board page ${page} delay for 60 sec to retry`
+      );
+      await SLEEP(60000);
+      console.log(`retry fetch board page: ${page}`);
+      continue;
+    }
     if (Array.isArray(resp.data.boards) && resp.data.boards.length !== 0) {
       const items = resp.data.boards[0].items;
       if (Array.isArray(items)) {
