@@ -1,12 +1,14 @@
 <template>
   <div
-    class="flex flex-row py-1 px-2 text-ultramarine space-x-2 bg-gray rounded-sm bg-opacity-10"
+    class="flex flex-row py-1 px-2 text-ultramarine space-x-2 items-center bg-gray bg-opacity-50 rounded-lg"
   >
-    <div class="flex items-center">
+    <div
+      class="flex justify-center items-center h-4 w-4 rounded-full overflow-hidden"
+    >
       <img
         v-if="topic !== 'keyword'"
-        class="h-4 w-4 object-cover rounded-full shadow-xl"
-        :src="`${$config.path.images}/laws/${icon}`"
+        class="object-cover shadow-xl h-full w-full"
+        :src="`${$config.path.images}/${icon}`"
         :alt="text"
       />
     </div>
@@ -68,12 +70,10 @@ export default Vue.extend({
       const { type, value } = this.filter as Filter;
 
       switch (type) {
-        case FilterType.Party:
-          return `${value.split('/')[0]}.jpg`;
         case FilterType.Status:
-          return `${value}_small.png`;
-        case FilterType.Topic:
-          return `${value}_small.png`;
+          return `status/${value}_small.png`;
+        case FilterType.Category:
+          return `topic/laws/${value}_small.png`;
         default:
           return '';
       }
