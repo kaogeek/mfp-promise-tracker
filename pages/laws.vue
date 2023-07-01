@@ -74,7 +74,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import PromiseOverview from '@/components/laws/promise-overview/promise-overview.vue';
-import laws from '@/data/laws.json';
+// import laws from '@/data/laws.json';
 import TopicGroup from '@/components/laws/topic-group/topic-group.vue';
 import FilterPanel from '@/components/laws/filter-panel/filter-panel.vue';
 import ToggleList, { ListOption } from '@/components/toggle/toggle-list.vue';
@@ -120,6 +120,7 @@ export default Vue.extend({
     // LinkBanner,
     // FormLink,
   },
+  middleware: ['laws'],
   data() {
     return {
       topics: [
@@ -157,12 +158,15 @@ export default Vue.extend({
   computed: {
     filteredPromises(): TrackingPromiseLaws[] {
       return this.filters.length > 0
-        ? (laws as TrackingPromiseLaws[]).filter((promise) =>
+        ? (this.laws as TrackingPromiseLaws[]).filter((promise) =>
             this.filters.every((filter: Filter) =>
               checkFilterOnPromise(filter, promise)
             )
           )
-        : (laws as TrackingPromiseLaws[]);
+        : (this.laws as TrackingPromiseLaws[]);
+    },
+    laws(): any {
+      return this.$store.getters['laws/getLaws'];
     },
   },
   watch: {
@@ -210,6 +214,6 @@ export default Vue.extend({
 
 <style>
 .bg-mfp {
-  background: linear-gradient(180deg, #15385B 0%, #0E243A 7.98%);
+  background: linear-gradient(180deg, #15385b 0%, #0e243a 7.98%);
 }
 </style>
