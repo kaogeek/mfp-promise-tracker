@@ -11,8 +11,8 @@
     "links": [],
     "timelines": [
       {
-        "label": "กำลังต้องการยื่นสู่สภา",
-        "from": "21-06-2023"
+        "label": "กำลังร่างฯ",
+        "from": "05-07-2023"
       }
     ]
   },
@@ -26,7 +26,12 @@
     "isNCPO": false,
     "imageUrl": "https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/images/law.jpeg",
     "links": [],
-    "timelines": []
+    "timelines": [
+       {
+          "label": "กำลังร่างฯ",
+          "from": "05-07-2023"
+       }
+    ]
   },
   {
     "id": 1803879691,
@@ -38,7 +43,12 @@
     "isNCPO": false,
     "imageUrl": "https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/images/law.jpeg",
     "links": [],
-    "timelines": []
+    "timelines": [
+       {
+          "label": "กำลังร่างฯ",
+          "from": "05-07-2023"
+       }
+    ]
   },
   {
     "id": 1804017456,
@@ -50,7 +60,12 @@
     "isNCPO": false,
     "imageUrl": "https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/images/law.jpeg",
     "links": [],
-    "timelines": []
+    "timelines": [
+       {
+          "label": "กำลังร่างฯ",
+          "from": "05-07-2023"
+       }
+    ]
   },
   {
     "id": 1804017489,
@@ -62,7 +77,12 @@
     "isNCPO": false,
     "imageUrl": "https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/images/law.jpeg",
     "links": [],
-    "timelines": []
+    "timelines": [
+       {
+          "label": "กำลังร่างฯ",
+          "from": "05-07-2023"
+       }
+    ]
   },
   {
     "id": 1804017491,
@@ -74,7 +94,12 @@
     "isNCPO": false,
     "imageUrl": "https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/images/law.jpeg",
     "links": [],
-    "timelines": []
+    "timelines": [
+       {
+          "label": "กำลังร่างฯ",
+          "from": "05-07-2023"
+       }
+    ]
   },
   {
     "id": 1804017492,
