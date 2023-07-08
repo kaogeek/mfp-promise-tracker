@@ -11,8 +11,8 @@
     "links": [],
     "timelines": [
       {
-        "label": "กำลังร่างฯ",
-        "from": "05-07-2023"
+        "label": "กำลังเตรียมยื่นสู่สภา",
+        "from": "2023-07-12"
       }
     ]
   },
@@ -26,29 +26,19 @@
     "isNCPO": false,
     "imageUrl": "https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/images/law.jpeg",
     "links": [],
-    "timelines": [
-       {
-          "label": "กำลังร่างฯ",
-          "from": "05-07-2023"
-       }
-    ]
+    "timelines": []
   },
   {
     "id": 1803879691,
     "party": "ก้าวไกล",
     "title": "พ.ร.บ.จัดระเบียบราชการกระทรวงกลาโหม",
-    "category": "politics",
+    "category": "army",
     "status": "nodata",
     "description": "ยังไม่มีรายละเอียด",
     "isNCPO": false,
     "imageUrl": "https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/images/law.jpeg",
     "links": [],
-    "timelines": [
-       {
-          "label": "กำลังร่างฯ",
-          "from": "05-07-2023"
-       }
-    ]
+    "timelines": []
   },
   {
     "id": 1804017456,
@@ -60,12 +50,7 @@
     "isNCPO": false,
     "imageUrl": "https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/images/law.jpeg",
     "links": [],
-    "timelines": [
-       {
-          "label": "กำลังร่างฯ",
-          "from": "05-07-2023"
-       }
-    ]
+    "timelines": []
   },
   {
     "id": 1804017489,
@@ -77,12 +62,7 @@
     "isNCPO": false,
     "imageUrl": "https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/images/law.jpeg",
     "links": [],
-    "timelines": [
-       {
-          "label": "กำลังร่างฯ",
-          "from": "05-07-2023"
-       }
-    ]
+    "timelines": []
   },
   {
     "id": 1804017491,
@@ -94,12 +74,7 @@
     "isNCPO": false,
     "imageUrl": "https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/images/law.jpeg",
     "links": [],
-    "timelines": [
-       {
-          "label": "กำลังร่างฯ",
-          "from": "05-07-2023"
-       }
-    ]
+    "timelines": []
   },
   {
     "id": 1804017492,
@@ -129,7 +104,7 @@
     "id": 1804017494,
     "party": "ก้าวไกล",
     "title": "พ.ร.บ.การบริหารราชการในจังหวัดชายแดนภาคใต้",
-    "category": "politics",
+    "category": "peace",
     "status": "nodata",
     "description": "",
     "isNCPO": false,
@@ -249,7 +224,7 @@
     "id": 1804017616,
     "party": "ก้าวไกล",
     "title": "พ.ร.บ.รับรองอัตลักษณ์ทางเพศ",
-    "category": "rights",
+    "category": "diversity",
     "status": "nodata",
     "description": "",
     "isNCPO": false,
@@ -369,7 +344,7 @@
     "id": 1804017668,
     "party": "ก้าวไกล",
     "title": "พ.ร.บ.คุ้มครองผู้แจ้งเบาะแสการทุจริต",
-    "category": "government",
+    "category": "corruption",
     "status": "nodata",
     "description": "",
     "isNCPO": false,
@@ -393,7 +368,7 @@
     "id": 1804017681,
     "party": "ก้าวไกล",
     "title": "พ.ร.บ.แผนและขั้นตอนการกระจายอำนาจ",
-    "category": "government",
+    "category": "decentralize",
     "status": "nodata",
     "description": "",
     "isNCPO": false,
@@ -416,7 +391,7 @@
   {
     "id": 1804017686,
     "party": "ก้าวไกล",
-    "title": "พ.ร.บ.การอำนวยความสะดงกในการพิจารณาอนุญาตททางราชการ",
+    "title": "พ.ร.บ.การอำนวยความสะดงกในการพิจารณาอนุญาตทางราชการ",
     "category": "government",
     "status": "nodata",
     "description": "",
@@ -477,7 +452,7 @@
     "id": 1804017738,
     "party": "ก้าวไกล",
     "title": "พ.ร.บ.ภาษีความมั่งคั่ง",
-    "category": "economy",
+    "category": "tax",
     "status": "nodata",
     "description": "",
     "isNCPO": false,
@@ -489,7 +464,7 @@
     "id": 1804017742,
     "party": "ก้าวไกล",
     "title": "พ.ร.บ.ภาษีสรรพสามิต (สุราก้าวหน้า)",
-    "category": "economy",
+    "category": "tax",
     "status": "nodata",
     "description": "",
     "isNCPO": false,
