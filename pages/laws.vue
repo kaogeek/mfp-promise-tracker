@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="flex flex-row justify-center bg-mfp min-h-screen px-3 py-6 md:py-12"
-  >
+  <div class="flex flex-row justify-center bg-mfp min-h-screen px-3 py-6 md:py-12">
     <div class="relative flex flex-row w-full max-w-7xl">
       <FilterPanel v-model="filters" />
 
@@ -31,11 +29,7 @@
             <p class="wv-font-condolar wv-h11 text-white">เรียงร่างกฎหมายตาม</p>
           </div>
 
-          <ToggleList
-            v-model="groupBy"
-            :options="groupByOptions"
-            align="horizontal"
-          />
+          <ToggleList v-model="groupBy" :options="groupByOptions" align="horizontal" />
         </div>
 
         <div class="w-full flex flex-col md:px-6">
@@ -46,9 +40,7 @@
             :topic="groupBy === 'category' ? group : undefined"
             :status="groupBy === 'status' ? group : undefined"
             :promises="filteredPromises"
-            :promise-per-page="
-              filters.find(({ type }) => type === groupBy) ? 0 : 3
-            "
+            :promise-per-page="filters.find(({ type }) => type === groupBy) ? 0 : 3"
             @viewGroup="setGroupFilter(groupBy, group)"
           />
         </div>
@@ -72,23 +64,23 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import PromiseOverview from '@/components/laws/promise-overview/promise-overview.vue';
+import Vue from "vue";
+import PromiseOverview from "@/components/laws/promise-overview/promise-overview.vue";
 // import laws from '@/data/laws.json';
-import TopicGroup from '@/components/laws/topic-group/topic-group.vue';
-import FilterPanel from '@/components/laws/filter-panel/filter-panel.vue';
-import ToggleList, { ListOption } from '@/components/toggle/toggle-list.vue';
-import Button from '@/components/button.vue';
+import TopicGroup from "@/components/laws/topic-group/topic-group.vue";
+import FilterPanel from "@/components/laws/filter-panel/filter-panel.vue";
+import ToggleList, { ListOption } from "@/components/toggle/toggle-list.vue";
+import Button from "@/components/button.vue";
 // import LinkBanner from '@/components/link-banner.vue';
 // import FormLink from '@/components/form-link.vue';
-import { PromiseStatus } from '@/models/promise';
-import { PromiseLawsTopic, TrackingPromiseLaws } from '@/models/promise-laws';
-import { Filter, FilterType } from '~/models/filter';
-import { createMetadata } from '~/utils/metadata';
+import { PromiseStatus } from "@/models/promise";
+import { PromiseLawsTopic, TrackingPromiseLaws } from "@/models/promise-laws";
+import { Filter, FilterType } from "~/models/filter";
+import { createMetadata } from "~/utils/metadata";
 
 enum GroupBy {
-  Category = 'category',
-  Status = 'status',
+  Category = "category",
+  Status = "status",
 }
 
 const checkFilterOnPromise = (
@@ -110,7 +102,7 @@ const checkFilterOnPromise = (
 };
 
 export default Vue.extend({
-  name: 'ExplorePage',
+  name: "ExplorePage",
   components: {
     PromiseOverview,
     TopicGroup,
@@ -120,18 +112,24 @@ export default Vue.extend({
     // LinkBanner,
     // FormLink,
   },
-  middleware: ['laws'],
+  middleware: ["laws"],
   data() {
     return {
       topics: [
         PromiseLawsTopic.Politics,
         PromiseLawsTopic.Rights,
         PromiseLawsTopic.Land,
-        PromiseLawsTopic.Government,
-        PromiseLawsTopic.Public,
-        PromiseLawsTopic.Economy,
         PromiseLawsTopic.Environment,
+        PromiseLawsTopic.Economy,
+        PromiseLawsTopic.Public,
         PromiseLawsTopic.Labor,
+        PromiseLawsTopic.Government,
+        PromiseLawsTopic.Army,
+        PromiseLawsTopic.Decentralize,
+        PromiseLawsTopic.Corruption,
+        PromiseLawsTopic.Tax,
+        PromiseLawsTopic.Peace,
+        PromiseLawsTopic.Diversity,
       ],
       statuses: [
         PromiseStatus.NoData,
@@ -144,37 +142,32 @@ export default Vue.extend({
       groupBy: GroupBy.Category as GroupBy,
       groupByOptions: [
         {
-          label: 'ตามประเด็น',
+          label: "ตามประเด็น",
           value: GroupBy.Category,
         },
         {
-          label: 'ตามสถานะ',
+          label: "ตามสถานะ",
           value: GroupBy.Status,
         },
       ] as ListOption[],
     };
   },
-  head: createMetadata({ pageName: 'ดูคำสัญญา' }),
+  head: createMetadata({ pageName: "ดูคำสัญญา" }),
   computed: {
     filteredPromises(): TrackingPromiseLaws[] {
       return this.filters.length > 0
         ? (this.laws as TrackingPromiseLaws[]).filter((promise) =>
-            this.filters.every((filter: Filter) =>
-              checkFilterOnPromise(filter, promise)
-            )
+            this.filters.every((filter: Filter) => checkFilterOnPromise(filter, promise))
           )
         : (this.laws as TrackingPromiseLaws[]);
     },
     laws(): any {
-      return this.$store.getters['laws/getLaws'];
+      return this.$store.getters["laws/getLaws"];
     },
   },
   watch: {
     filters(filters: Filter[]) {
-      const query = filters.reduce(
-        (q, { type, value }) => ({ ...q, [type]: value }),
-        {}
-      );
+      const query = filters.reduce((q, { type, value }) => ({ ...q, [type]: value }), {});
 
       this.$router.push({ query });
       this.scrollToTop();
@@ -193,9 +186,7 @@ export default Vue.extend({
       type: FilterType.Status | FilterType.Category,
       value: PromiseStatus | PromiseLawsTopic
     ) {
-      const existingFilter = this.filters.find(
-        (filter) => filter.type === type
-      );
+      const existingFilter = this.filters.find((filter) => filter.type === type);
 
       if (existingFilter?.value === value) return;
 
@@ -206,7 +197,7 @@ export default Vue.extend({
         : [...this.filters, { type, value } as Filter];
     },
     scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
   },
 });
