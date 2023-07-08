@@ -1,6 +1,6 @@
-export const BASE_TITLE = 'ติดตาม 45+ ร่างกฎหมาย พรรคก้าวไกล';
-const DESCRIPTION = 'ที่ก้าวไกลพร้อมยื่นทันทีหลังเปิดสภา';
-export const DEFAULT_OG_IMAGE = 'https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/og/default.jpg';
+export const BASE_TITLE = 'ติดตาม 14 ชุดกฎหมายเปลี่ยนประเทศ';
+const DESCRIPTION = 'ที่พรรคก้าวไกลพร้อมยื่นเข้าสภา';
+export const DEFAULT_OG_IMAGE = 'https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/og/default.png';
 
 interface createMetadataParams {
   pageName?: string;

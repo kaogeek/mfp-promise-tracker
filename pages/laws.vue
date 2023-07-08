@@ -142,7 +142,7 @@ export default Vue.extend({
       groupBy: GroupBy.Category as GroupBy,
       groupByOptions: [
         {
-          label: "ตามประเด็น",
+          label: "ตามชุดกฎหมาย",
           value: GroupBy.Category,
         },
         {
