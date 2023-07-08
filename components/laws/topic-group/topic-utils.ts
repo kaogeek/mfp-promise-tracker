@@ -59,7 +59,7 @@ export const getGroupTitle = (
   if (by === 'category') {
     const title = getTopicTitle(where as PromiseLawsTopic);
     if (title) {
-      return 'ประเด็น' + getTopicTitle(where as PromiseLawsTopic);
+      return 'ชุดกฎหมาย' + getTopicTitle(where as PromiseLawsTopic);
     } else {
       return '';
     }

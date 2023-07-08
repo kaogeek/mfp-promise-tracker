@@ -59,7 +59,7 @@ export default Vue.extend({
         case FilterType.Keyword:
           return `คำค้นหา: ${value}`;
         case FilterType.Category:
-          return `ประเด็น${
+          return `${
             promiseLawsTopicTextMap.get(value as PromiseLawsTopic)?.short
           }`;
         default:

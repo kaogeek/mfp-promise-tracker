@@ -9,19 +9,19 @@
       <StatusAnimation />
       <h2 class="wv-h6 wv-font-bold wv-font-kondolar py-2">ติดตาม</h2>
       <h1 class="wv-h4 wv-font-bold wv-font-kondolar text-mfp-orange pb-2">
-        45+ ร่างกฎหมาย<br class="block sm:hidden" /><br
+        14 ชุดกฎหมาย<br class="block sm:hidden" /><br
           class="hidden sm:block"
         />
       </h1>
-      <h1 class="wv-h4 wv-font-bold wv-font-kondolar pb-2">พรรคก้าวไกล</h1>
-      <h4 class="wv-b5 wv-font-kondolar px-4">ที่พร้อมยื่นทันทีหลังเปิดสภา</h4>
+      <h1 class="wv-h4 wv-font-bold wv-font-kondolar pb-2">เปลี่ยนประเทศ</h1>
+      <h4 class="wv-b5 wv-font-kondolar px-4">พร้อมยื่นเข้าสภา</h4>
       <div class="flex flex-col items-center py-4 w-full px-4">
         <NuxtLink class="mt-3 mb-6 mx-auto" to="/laws">
           <Button
             theme="primary-white"
             class="h-10 w-full sm:w-max wv-font-anuphan wv-u4 flex justify-center"
           >
-            <span>ร่างกฎหมายทั้งหมด</span>
+            <span>ดูร่างกฎหมายทั้งหมด</span>
             <svg
               width="12"
               height="12"
@@ -35,9 +35,9 @@
             </svg>
           </Button>
         </NuxtLink>
-        <div class="p-2 wv-font-anuphan wv-u5 bg-gray bg-opacity-10 rounded-sm">
+        <!-- <div class="p-2 wv-font-anuphan wv-u5 bg-gray bg-opacity-10 rounded-sm">
           อัปเดตล่าสุด {{ updatedDate }}
-        </div>
+        </div> -->
       </div>
       <!-- <div class="w-5xl w-full px-4">
         <div class="block w-full border-b border-white border-dashed h-1">

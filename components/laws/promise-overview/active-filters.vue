@@ -34,7 +34,8 @@
         ref="countLabel"
         class="wv-h10 wv-font-kondolar wv-font-black text-mfp-orange"
       >
-        {{ promises.length }} ร่างกฎหมาย
+        <!-- {{ promises.length }} ร่างกฎหมาย -->
+        14 ชุดกฎหมาย
       </p>
       <div
         v-if="filters.length > 0"
@@ -48,7 +49,7 @@
         />
       </div>
       <p v-else class="wv-u4 wv-font-semibold">
-        ที่ก้าวไกลพร้อมยื่นทันทีหลังเปิดสภา
+        ที่พร้อมยื่นเข้าสภา
       </p>
     </div>
     <div v-else>

@@ -20,7 +20,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'ติดตาม 45 ร่างกฎหมาย จากพรรคก้าวไกลที่ยื่นสู่สภา',
+        content: 'ติดตาม 14 ชุดกฎหมาย เปลี่ยนประเทศ พร้อมยื่นเข้าสภา',
       },
       { name: 'format-detection', content: 'telephone=no' },
       ...meta,

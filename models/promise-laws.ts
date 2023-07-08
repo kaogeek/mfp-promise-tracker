@@ -1,14 +1,20 @@
 import { PromiseStatus } from './promise';
 
 export enum PromiseLawsTopic {
-  Politics = 'politics',
-  Rights = 'rights',
-  Land = 'land',
-  Government = 'government',
-  Public = 'public',
+  Politics =	'politics',
+  Army = 'army',
+  Decentralize = 'decentralize',
   Economy = 'economy',
-  Environment = 'environment',
-  Labor = 'labor',
+  Corruption	= 'corruption',
+  Government = 'government',
+  Tax = 'tax',
+  Public =	'public',
+  Land = 'land',
+  Labor =	'labor',
+  Environment =	'environment',
+  Rights = 'rights',
+  Peace	= 'peace',
+  Diversity = 'diversity',
 }
 
 export interface PromiseLawsLink {
@@ -39,38 +45,35 @@ export const promiseLawsTopicOrder: PromiseLawsTopic[] = [
   PromiseLawsTopic.Politics,
   PromiseLawsTopic.Rights,
   PromiseLawsTopic.Land,
-  PromiseLawsTopic.Government,
-  PromiseLawsTopic.Public,
-  PromiseLawsTopic.Economy,
   PromiseLawsTopic.Environment,
+  PromiseLawsTopic.Economy,
+  PromiseLawsTopic.Public,
   PromiseLawsTopic.Labor,
+  PromiseLawsTopic.Government,
+  PromiseLawsTopic.Army,
+  PromiseLawsTopic.Decentralize,
+  PromiseLawsTopic.Corruption,
+  PromiseLawsTopic.Tax,
+  PromiseLawsTopic.Peace,
+  PromiseLawsTopic.Diversity,
 ];
 
 export const promiseLawsTopicTextMap = new Map<
   PromiseLawsTopic,
   { long: string; short: string }
 >([
-  [PromiseLawsTopic.Politics, { long: 'กฎหมายการเมือง', short: 'การเมือง' }],
-  [
-    PromiseLawsTopic.Rights,
-    { long: 'กฎหมายสิทธิเสรีภาพ', short: 'สิทธิเสรีภาพ' },
-  ],
-  [
-    PromiseLawsTopic.Land,
-    { long: 'กฎหมายปฎิรูปที่ดิน', short: 'ปฎิรูปที่ดิน' },
-  ],
-  [
-    PromiseLawsTopic.Government,
-    { long: 'กฎหมายปฏิรูประบบบริหารราชการ', short: 'ระบบบริหารราชการ' },
-  ],
-  [
-    PromiseLawsTopic.Public,
-    { long: 'กฎหมายบริการสาธารณะ', short: 'บริการสาธารณะ' },
-  ],
-  [PromiseLawsTopic.Economy, { long: 'กฎหมายเศรษฐกิจ', short: 'เศรษฐกิจ' }],
-  [
-    PromiseLawsTopic.Environment,
-    { long: 'กฎหมายสิ่งแวดล้อม', short: 'สิ่งแวดล้อม' },
-  ],
-  [PromiseLawsTopic.Labor, { long: 'กฎหมายแรงงาน', short: 'แรงงาน' }],
+  [PromiseLawsTopic.Army, { long: 'กองทัพ', short: 'กองทัพ' }],
+  [PromiseLawsTopic.Decentralize, { long: 'กระจายอำนาจ', short: 'กระจายอำนาจ' }],
+  [PromiseLawsTopic.Economy, { long: 'การแข่งขันทางการค้า', short: 'การแข่งขันทางการค้า' }],
+  [PromiseLawsTopic.Corruption, { long: 'การทุจริต', short: 'การทุจริต' }],
+  [PromiseLawsTopic.Government, { long: 'ระบบราชการ', short: 'ระบบราชการ' }],
+  [PromiseLawsTopic.Tax, { long: 'ระบบภาษี', short: 'ระบบภาษี' }],
+  [PromiseLawsTopic.Public, { long: 'บริการสาธารณะ', short: 'บริการสาธารณะ' }],
+  [PromiseLawsTopic.Land, { long: 'ที่ดิน', short: 'ที่ดิน' }],
+  [PromiseLawsTopic.Labor, { long: 'แรงงาน', short: 'แรงงาน' }],
+  [PromiseLawsTopic.Environment, { long: 'สิ่งแวดล้อม', short: 'สิ่งแวดล้อม' }],
+  [PromiseLawsTopic.Rights, { long: 'สิทธิเสรีภาพ', short: 'สิทธิเสรีภาพ' }],
+  [PromiseLawsTopic.Peace, { long: 'สันติภาพ/ความขัดแย้ง', short: 'สันติภาพ/ความขัดแย้ง' }],
+  [PromiseLawsTopic.Diversity, { long: 'ความหลากหลาย', short: 'ความหลากหลาย' }],
+  [PromiseLawsTopic.Politics, { long: 'รัฐธรรมนูญ', short: 'รัฐธรรมนูญ' }],
 ]);
