@@ -90,7 +90,7 @@ function convertRangeToFromTo(value: string): {
 function convertDateToISOFormat(date: string): string {
   const splited = date.split('/');
   if (splited.length === 3) {
-    const [day, month, year] = splited;
+    const [year, month, day] = splited;
     return `${year}-${month}-${day}`;
   } else if (splited.length === 2) {
     const [month, year] = splited;
