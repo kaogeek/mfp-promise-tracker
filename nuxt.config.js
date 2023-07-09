@@ -66,16 +66,16 @@ export default {
   },
 
   generate: {
-    async routes() {
-      const promisesRoute = await Promise.all(
-        promises.map((promise) => ({
-          route: `/promises/${promise.id}`,
-          payload: {
-            promise,
-          },
-        }))
-      );
-      return [...promisesRoute];
-    },
+    // async routes() {
+    //   const promisesRoute = await Promise.all(
+    //     promises.map((promise) => ({
+    //       route: `/promises/${promise.id}`,
+    //       payload: {
+    //         promise,
+    //       },
+    //     }))
+    //   );
+    //   return [...promisesRoute];
+    // },
   },
 };

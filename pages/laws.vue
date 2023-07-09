@@ -152,7 +152,7 @@ export default Vue.extend({
       ] as ListOption[],
     };
   },
-  head: createMetadata({ pageName: "ดูคำสัญญา" }),
+  head: createMetadata({ pageName: "ดูร่างกฎหมาย" }),
   computed: {
     filteredPromises(): TrackingPromiseLaws[] {
       return this.filters.length > 0
