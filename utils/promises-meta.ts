@@ -11,7 +11,7 @@ export const titleText = (title: string, party: string) => {
 export const descriptionMap = new Map<PromiseStatus, string>([
   [
     PromiseStatus.NoData,
-    'ร่างกฎหมายนี้ยังไม่พบความเคลื่อนไหว ทวงถามก้าวไกลถึงข้อมูลและการดำเนินการเกี่ยวกับร่างกฎหมายนี้',
+    'ร่างกฎหมายนี้ยังเตรียมยื่นเข้าสภา ทวงถามก้าวไกลถึงข้อมูลและการดำเนินการเกี่ยวกับร่างกฎหมายนี้',
   ],
   [
     PromiseStatus.Proposed,

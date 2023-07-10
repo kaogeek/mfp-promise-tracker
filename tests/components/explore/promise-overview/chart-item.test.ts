@@ -10,7 +10,7 @@ const data = [
 const max = 30;
 
 test('should render given label and data count as a text', () => {
-  const label = 'ไม่พบความเคลื่อนไหว';
+  const label = 'เตรียมยื่นเข้าสภา';
   const wrapper = mount(ChartItem, { propsData: { label, data } });
 
   expect(wrapper.find('p').text()).toBe(`${label} (15)`);

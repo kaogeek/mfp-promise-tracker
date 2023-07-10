@@ -141,9 +141,9 @@ export const promiseLawsTopicTextMap = new Map<
 ]);
 
 export const promiseStatusTextMap = new Map<PromiseStatus, string>([
-  [PromiseStatus.NoData, 'ไม่พบความเคลื่อนไหว'],
-  [PromiseStatus.Proposed, 'ยื่นเข้าสภา'],
-  [PromiseStatus.Paused, 'ถูกระงับ'],
+  [PromiseStatus.NoData, 'เตรียมยื่นเข้าสภา'],
+  [PromiseStatus.Proposed, 'ยื่นเข้าสภาแล้ว'],
+  [PromiseStatus.Paused, 'ถูกระงับ/ปัดตก'],
   [PromiseStatus.Working, 'กำลังดำเนินการ'],
   [PromiseStatus.Done, 'สำเร็จ'],
 ]);

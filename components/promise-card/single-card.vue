@@ -14,7 +14,7 @@
           <StatusLegend
             :show-detail="false"
             :show-only="
-              promise.status ? getStatus(promise.status) : 'ไม่พบความเคลื่อนไหว'
+              promise.status ? getStatus(promise.status) : 'เตรียมยื่นเข้าสภา'
             "
           />
         </div>

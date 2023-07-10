@@ -106,7 +106,7 @@ test('should filter promise according to params', () => {
 
 test('should return group title', () => {
   expect(getGroupTitle('topic', 'culture')).toBe('ประเด็นศาสนาและวัฒนธรรม');
-  expect(getGroupTitle('status', 'nodata')).toBe('สถานะ: ไม่พบความเคลื่อนไหว');
+  expect(getGroupTitle('status', 'nodata')).toBe('สถานะ: เตรียมยื่นเข้าสภา');
   expect(getGroupTitle('topic', 'hi')).toBe('');
   expect(getGroupTitle('status', 'hi')).toBe('');
   expect(getGroupTitle('', 'hi')).toBe('');
