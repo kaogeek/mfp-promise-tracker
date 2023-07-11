@@ -1,6 +1,8 @@
 import { PromiseStatus } from './promise';
 
 export enum PromiseLawsTopic {
+  Army = 'army',
+  Decentralize = 'decentralize',
   Politics =	'politics',
   Rights = 'rights',
   Land = 'land',
@@ -9,8 +11,6 @@ export enum PromiseLawsTopic {
   Public =	'public',
   Labor =	'labor',
   Government = 'government',
-  Army = 'army',
-  Decentralize = 'decentralize',
   Corruption	= 'corruption',
   Tax = 'tax',
   Peace	= 'peace',
@@ -42,7 +42,8 @@ export interface TrackingPromiseLaws {
 }
 
 export const promiseLawsTopicOrder: PromiseLawsTopic[] = [
-  PromiseLawsTopic.Politics,
+  PromiseLawsTopic.Army,
+  PromiseLawsTopic.Decentralize,
   PromiseLawsTopic.Rights,
   PromiseLawsTopic.Land,
   PromiseLawsTopic.Environment,
@@ -50,12 +51,11 @@ export const promiseLawsTopicOrder: PromiseLawsTopic[] = [
   PromiseLawsTopic.Public,
   PromiseLawsTopic.Labor,
   PromiseLawsTopic.Government,
-  PromiseLawsTopic.Army,
-  PromiseLawsTopic.Decentralize,
   PromiseLawsTopic.Corruption,
   PromiseLawsTopic.Tax,
   PromiseLawsTopic.Peace,
   PromiseLawsTopic.Diversity,
+  PromiseLawsTopic.Politics,
 ];
 
 export const promiseLawsTopicTextMap = new Map<

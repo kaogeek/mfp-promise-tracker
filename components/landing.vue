@@ -71,7 +71,7 @@ export default Vue.extend({
 
 <style scoped>
 .landing-bg {
-  height: 540px;
+  height: 460px;
 }
 
 @media (min-width: 547px) {
