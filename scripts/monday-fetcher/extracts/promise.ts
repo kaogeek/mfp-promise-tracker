@@ -20,6 +20,7 @@ export interface RawPromise {
   promiseTitle: string;
   status: string;
   explain: string;
+  solution: string;
   isNCPO: boolean;
   images: RawImage[];
   vdo: string | null;
@@ -48,6 +49,7 @@ export async function getRawPromises(): Promise<{
       promiseTitle: e.name,
       status: extractsColValue('status', e.column_values),
       explain: extractsColValue('detail', e.column_values),
+      solution: extractsColValue('solution', e.column_values),
       isNCPO: false, // National Council for Peace and Order ?
       images,
       vdo: guardEmptiness(extractsColValue('vdo', e.column_values)),
