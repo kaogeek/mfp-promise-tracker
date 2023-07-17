@@ -3,7 +3,13 @@
     <div class="z-20 wv_navbar wv_navbar--white">
       <div class="wv_navbar__logo items-center">
         <a href="/" class="flex items-center">
-          <img src="/images/logo-mfp.png" class="wv_navbar__logo__addon" />
+          <img
+            src="/images/logo-mfp.png"
+            class="wv_navbar__logo__addon"
+            width="33"
+            height="28"
+            alt="logo-mfp"
+          />
           <div class="px-4 whitespace-nowrap">พรรคก้าวไกล</div>
         </a>
       </div>

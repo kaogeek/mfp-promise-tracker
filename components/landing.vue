@@ -9,12 +9,10 @@
       <StatusAnimation />
       <h2 class="wv-h6 wv-font-bold wv-font-kondolar py-2">ติดตาม</h2>
       <h1 class="wv-h4 wv-font-bold wv-font-kondolar text-mfp-orange pb-2">
-        14 ชุดกฎหมาย<br class="block sm:hidden" /><br
-          class="hidden sm:block"
-        />
+        14 ชุดกฎหมาย<br class="block sm:hidden" /><br class="hidden sm:block" />
       </h1>
       <h1 class="wv-h4 wv-font-bold wv-font-kondolar pb-2">เปลี่ยนประเทศ</h1>
-      <h4 class="wv-b5 wv-font-kondolar px-4">พร้อมยื่นเข้าสภา</h4>
+      <p class="wv-b5 wv-font-kondolar px-4">พร้อมยื่นเข้าสภา</p>
       <div class="flex flex-col items-center py-4 w-full px-4">
         <NuxtLink class="mt-3 mb-6 mx-auto" to="/laws">
           <Button

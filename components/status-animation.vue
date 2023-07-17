@@ -1,6 +1,11 @@
 <template>
   <div class="status-animation">
-    <img :src="`${$config.path.images}/status/mfp-logo.png`" alt="" />
+    <img
+      :src="`${$config.path.images}/status/mfp-logo.png`"
+      alt="mfp-logo"
+      width="50"
+      height="43"
+    />
   </div>
 </template>
 

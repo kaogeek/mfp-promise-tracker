@@ -11,6 +11,7 @@
           v-if="options"
           class="w-5 h-5 rounded-full border border-gray border-opacity-10 mr-1"
           :src="`${$config.path.images}${selectedOption.iconUrl}`"
+          :alt="selectedOption.label"
         />
         <span v-if="options">{{ selectedOption.label }}</span>
       </div>

@@ -16,6 +16,7 @@
       v-if="option.iconUrl"
       class="w-5 h-5 rounded-full border border-gray border-opacity-10"
       :src="`${$config.path.images}${option.iconUrl}`"
+      :alt="option.label"
     />
     <span class="text-white">{{ option.label }}</span>
   </button>
