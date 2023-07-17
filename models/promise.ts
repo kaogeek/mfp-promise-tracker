@@ -12,19 +12,19 @@ export enum PromiseTopic {
 
 export enum PromiseLawsTopic {
   Army = 'army',
-  Decentralize = 'decentralize',
-  Politics =	'politics',
-  Rights = 'rights',
-  Land = 'land',
-  Environment =	'environment',
   Economy = 'economy',
-  Public =	'public',
-  Labor =	'labor',
-  Government = 'government',
+  Decentralize = 'decentralize',
   Corruption	= 'corruption',
+  Government = 'government',
   Tax = 'tax',
+  Public =	'public',
+  Land = 'land',
+  Labor =	'labor',
+  Environment =	'environment',
+  Rights = 'rights',
   Peace	= 'peace',
   Diversity = 'diversity',
+  Politics =	'politics',
 }
 
 export enum PromiseStatus {

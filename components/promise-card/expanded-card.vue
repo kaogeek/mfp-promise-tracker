@@ -13,6 +13,13 @@
       >
         {{ promise.description }}
       </p>
+      <h2 class="wv-h10 wv-font-kondolar wv-font-black py-4">แนวทางการแก้ไข</h2>
+      <p
+        :id="`expanded-card-${promise.id}-description`"
+        class="wv-font-baijamjuri wv-b5"
+      >
+        {{ promise.solution }}
+      </p>
       <NCPO v-if="promise.isNCPO" />
       <h2 class="wv-h10 wv-font-kondolar wv-font-black py-4">
         ลิงก์ / ข้อมูลที่เกี่ยวข้อง

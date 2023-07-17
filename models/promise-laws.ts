@@ -2,19 +2,19 @@ import { PromiseStatus } from './promise';
 
 export enum PromiseLawsTopic {
   Army = 'army',
-  Decentralize = 'decentralize',
-  Politics =	'politics',
-  Rights = 'rights',
-  Land = 'land',
-  Environment =	'environment',
   Economy = 'economy',
-  Public =	'public',
-  Labor =	'labor',
-  Government = 'government',
+  Decentralize = 'decentralize',
   Corruption	= 'corruption',
+  Government = 'government',
   Tax = 'tax',
+  Public =	'public',
+  Land = 'land',
+  Labor =	'labor',
+  Environment =	'environment',
+  Rights = 'rights',
   Peace	= 'peace',
   Diversity = 'diversity',
+  Politics =	'politics',
 }
 
 export interface PromiseLawsLink {
@@ -43,16 +43,16 @@ export interface TrackingPromiseLaws {
 
 export const promiseLawsTopicOrder: PromiseLawsTopic[] = [
   PromiseLawsTopic.Army,
-  PromiseLawsTopic.Decentralize,
-  PromiseLawsTopic.Rights,
-  PromiseLawsTopic.Land,
-  PromiseLawsTopic.Environment,
   PromiseLawsTopic.Economy,
-  PromiseLawsTopic.Public,
-  PromiseLawsTopic.Labor,
-  PromiseLawsTopic.Government,
+  PromiseLawsTopic.Decentralize,
   PromiseLawsTopic.Corruption,
+  PromiseLawsTopic.Government,
   PromiseLawsTopic.Tax,
+  PromiseLawsTopic.Public,
+  PromiseLawsTopic.Land,
+  PromiseLawsTopic.Labor,
+  PromiseLawsTopic.Environment,
+  PromiseLawsTopic.Rights,
   PromiseLawsTopic.Peace,
   PromiseLawsTopic.Diversity,
   PromiseLawsTopic.Politics,
@@ -63,8 +63,8 @@ export const promiseLawsTopicTextMap = new Map<
   { long: string; short: string }
 >([
   [PromiseLawsTopic.Army, { long: 'กองทัพ', short: 'กองทัพ' }],
-  [PromiseLawsTopic.Decentralize, { long: 'กระจายอำนาจ', short: 'กระจายอำนาจ' }],
   [PromiseLawsTopic.Economy, { long: 'การแข่งขันทางการค้า', short: 'การแข่งขันทางการค้า' }],
+  [PromiseLawsTopic.Decentralize, { long: 'กระจายอำนาจ', short: 'กระจายอำนาจ' }],
   [PromiseLawsTopic.Corruption, { long: 'การทุจริต', short: 'การทุจริต' }],
   [PromiseLawsTopic.Government, { long: 'ระบบราชการ', short: 'ระบบราชการ' }],
   [PromiseLawsTopic.Tax, { long: 'ระบบภาษี', short: 'ระบบภาษี' }],
