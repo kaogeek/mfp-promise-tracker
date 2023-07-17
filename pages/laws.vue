@@ -116,20 +116,20 @@ export default Vue.extend({
   data() {
     return {
       topics: [
-        PromiseLawsTopic.Politics,
-        PromiseLawsTopic.Rights,
-        PromiseLawsTopic.Land,
-        PromiseLawsTopic.Environment,
-        PromiseLawsTopic.Economy,
-        PromiseLawsTopic.Public,
-        PromiseLawsTopic.Labor,
-        PromiseLawsTopic.Government,
         PromiseLawsTopic.Army,
+        PromiseLawsTopic.Economy,
         PromiseLawsTopic.Decentralize,
         PromiseLawsTopic.Corruption,
+        PromiseLawsTopic.Government,
         PromiseLawsTopic.Tax,
+        PromiseLawsTopic.Public,
+        PromiseLawsTopic.Land,
+        PromiseLawsTopic.Labor,
+        PromiseLawsTopic.Environment,
+        PromiseLawsTopic.Rights,
         PromiseLawsTopic.Peace,
         PromiseLawsTopic.Diversity,
+        PromiseLawsTopic.Politics,
       ],
       statuses: [
         PromiseStatus.NoData,

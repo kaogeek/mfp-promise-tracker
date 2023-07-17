@@ -6,7 +6,7 @@
     :class="promise.timelines.length > 0 ? 'sm:grid-cols-2' : 'sm:grid-cols-1'"
   >
     <div>
-      <h2 class="wv-h10 wv-font-kondolar wv-font-black py-4">รายละเอียด</h2>
+      <h2 class="wv-h10 wv-font-kondolar wv-font-black py-4">ปัญหาและที่มา</h2>
       <p
         :id="`expanded-card-${promise.id}-description`"
         class="wv-font-baijamjuri wv-b5"
@@ -18,18 +18,20 @@
         :id="`expanded-card-${promise.id}-description`"
         class="wv-font-baijamjuri wv-b5"
       >
-        {{ promise.solution }}
+        <!-- {{ promise.solution !== '' ? promise.solution : 'ติดตามรายละเอียดของร่างได้เร็ว ๆ นี้' }} -->
+        <span v-html="promise.solution.replace(/(?:\r\n|\r|\n)/g, '<br />')">
+        </span>
       </p>
       <NCPO v-if="promise.isNCPO" />
       <h2 class="wv-h10 wv-font-kondolar wv-font-black py-4">
         ลิงก์ / ข้อมูลที่เกี่ยวข้อง
       </h2>
       <BoxContainer class="border-black border mb-3">
-        <img
+        <!-- <img
           :id="`expanded-card-${promise.id}-image`"
           :src="promise.imageUrl"
           :alt="`image-${promise.id}`"
-        />
+        /> -->
       </BoxContainer>
       <div v-if="promise.links.length > 0">
         <Link

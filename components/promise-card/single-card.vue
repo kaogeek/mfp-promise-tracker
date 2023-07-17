@@ -28,12 +28,12 @@
       <div
         class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 mr-3 mb-3"
       >
-        <img
+        <!-- <img
           :id="`single-card-${promise.id}-thumbnail`"
           class="rounded-sm overflow-hidden h-full w-full object-cover"
           :src="promise.imageUrl"
           :alt="`thumbnail-${promise.id}`"
-        />
+        /> -->
       </div>
     </div>
     <div
