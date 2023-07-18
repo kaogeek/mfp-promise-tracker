@@ -9,7 +9,7 @@
       <StatusAnimation />
       <h2 class="wv-h6 wv-font-bold wv-font-kondolar py-2">ติดตาม</h2>
       <h1 class="wv-h4 wv-font-bold wv-font-kondolar text-mfp-orange pb-2">
-        14 ชุดกฎหมาย<br class="block sm:hidden" /><br class="hidden sm:block" />
+        ชุดกฎหมาย<br class="block sm:hidden" /><br class="hidden sm:block" />
       </h1>
       <h1 class="wv-h4 wv-font-bold wv-font-kondolar pb-2">เปลี่ยนประเทศ</h1>
       <p class="wv-b5 wv-font-kondolar px-4">พร้อมยื่นเข้าสภา</p>

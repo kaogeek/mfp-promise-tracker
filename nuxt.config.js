@@ -20,7 +20,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'ติดตาม 14 ชุดกฎหมาย เปลี่ยนประเทศ พร้อมยื่นเข้าสภา',
+        content: 'ติดตามชุดกฎหมายเปลี่ยนประเทศ พร้อมยื่นเข้าสภา',
       },
       { name: 'format-detection', content: 'telephone=no' },
       ...meta,

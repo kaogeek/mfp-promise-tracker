@@ -35,7 +35,7 @@
         class="wv-h10 wv-font-kondolar wv-font-black text-mfp-orange"
       >
         <!-- {{ promises.length }} ร่างกฎหมาย -->
-        14 ชุดกฎหมาย
+        ชุดกฎหมาย
       </p>
       <div
         v-if="filters.length > 0"
