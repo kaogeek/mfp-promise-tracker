@@ -27,9 +27,19 @@ export default {
     ],
     link: [
       {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: `${BASE_PATH}/apple-touch-icon.png`,
+      },
+      {
         rel: 'icon',
         type: 'image/x-icon',
         href: `${BASE_PATH}/favicon-32x32.png`,
+      },
+      {
+        rel: 'mask-icon',
+        color: '#5bbad5',
+        href: `${BASE_PATH}/safari-pinned-tab.svg`,
       },
       {
         rel: 'manifest',
@@ -38,7 +48,6 @@ export default {
       { rel: 'stylesheet', href: `${BASE_PATH}/fonts/typography.css` },
     ],
   },
-
   css: [
     '@wevisdemo/ui/styles/typography.css',
     '@wevisdemo/ui/styles/components.css',
