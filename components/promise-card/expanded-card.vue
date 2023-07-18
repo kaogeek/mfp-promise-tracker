@@ -23,22 +23,24 @@
         </span>
       </p>
       <NCPO v-if="promise.isNCPO" />
-      <h2 class="wv-h10 wv-font-kondolar wv-font-black py-4">
-        ลิงก์ / ข้อมูลที่เกี่ยวข้อง
-      </h2>
-      <BoxContainer class="border-black border mb-3">
-        <!-- <img
-          :id="`expanded-card-${promise.id}-image`"
-          :src="promise.imageUrl"
-          :alt="`image-${promise.id}`"
-        /> -->
-      </BoxContainer>
       <div v-if="promise.links.length > 0">
-        <Link
-          v-for="(link, index) in promise.links"
-          :key="`promise-${promise.id}-link-${index}`"
-          :link="link"
-        />
+        <h2 class="wv-h10 wv-font-kondolar wv-font-black py-4">
+          ลิงก์ / ข้อมูลที่เกี่ยวข้อง
+        </h2>
+        <BoxContainer class="border-black border mb-3">
+          <!-- <img
+            :id="`expanded-card-${promise.id}-image`"
+            :src="promise.imageUrl"
+            :alt="`image-${promise.id}`"
+          /> -->
+        </BoxContainer>
+        <div v-if="promise.links.length > 0">
+          <Link
+            v-for="(link, index) in promise.links"
+            :key="`promise-${promise.id}-link-${index}`"
+            :link="link"
+          />
+        </div>
       </div>
     </div>
     <div v-if="promise.timelines.length > 0" class="sm:pl-6 pb-3">
