@@ -63,7 +63,7 @@
         }`"
       >
         <div
-          class="flex-1 flex flex-col p-5 space-y-2 wv-font-anuphan wv-u5 border-white border-t"
+          class="flex-1 flex flex-col p-5 space-y-2 wv-font-anuphan wv-u5 border-white"
         >
           <p class="text-white wv-font-semibold">คัดกรองร่างกฎหมาย</p>
           <DropdownSelect
