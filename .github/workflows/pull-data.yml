@@ -9,6 +9,9 @@ concurrency:
   group: github
   cancel-in-progress: true
 
+env:
+  TZ: "Asia/Bangkok"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,6 +35,12 @@ jobs:
           echo MONDAY_API_TOKEN=${{ secrets.MONDAY_API_TOKEN }} >> .env
           echo MONDAY_BOARD_ID=${{ secrets.MONDAY_BOARD_ID }} >> .env
           yarn fetch-data
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: |
+            data/*.json
 
   commit:
     if: github.event.schedule
@@ -56,6 +65,6 @@ jobs:
             echo 'Committing data...'
             git add data
             git diff --staged
-            git commit -m '📦 update laws data'
+            git commit -m "📦 update laws data $(date)"
             git push
           fi
