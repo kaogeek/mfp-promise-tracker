@@ -38,6 +38,12 @@ jobs:
           echo MONDAY_API_TOKEN=${{ secrets.MONDAY_API_TOKEN }} >> .env
           echo MONDAY_BOARD_ID=${{ secrets.MONDAY_BOARD_ID }} >> .env
           yarn fetch-data
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: |
+            data/*.json
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
