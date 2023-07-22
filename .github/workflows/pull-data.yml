@@ -38,7 +38,7 @@ jobs:
           echo MONDAY_API_TOKEN=${{ secrets.MONDAY_API_TOKEN }} >> .env
           echo MONDAY_BOARD_ID=${{ secrets.MONDAY_BOARD_ID }} >> .env
           yarn fetch-data
-      
+
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
@@ -73,8 +73,8 @@ jobs:
         run: |
           set -euxo pipefail
           if [ -n "$(git status -s data)" ]; then
-            git config user.name github-actions[bot]
-            git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+            git config user.name github-actions
+            git config user.email github-actions@github.comgithub.com
             echo 'Committing data...'
             git add data
             git diff --staged
