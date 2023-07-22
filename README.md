@@ -1,4 +1,5 @@
 # MFP 300+ Promise Tracker
+[![Update Laws Data](https://github.com/kaogeek/mfp-promise-tracker/actions/workflows/pull-data.yml/badge.svg?event=schedule)](https://github.com/kaogeek/mfp-promise-tracker/actions/workflows/pull-data.yml)
 
 Move Forward Party promise tracker
 
