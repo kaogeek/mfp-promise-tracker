@@ -45,12 +45,6 @@ jobs:
           path: |
             data/*.json
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          path: |
-            data/*.json
-
   commit:
     if: |
       github.event.schedule ||
@@ -82,5 +76,5 @@ jobs:
             git add data
             git diff --staged
             git commit -m "📦 update laws data $(date)"
-            git push -u
+            git push
           fi
