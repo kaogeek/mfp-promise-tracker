@@ -3,6 +3,9 @@ name: Update Laws Data
 on:
   schedule:
     - cron: '0 * * * *'
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -72,12 +75,14 @@ jobs:
         shell: bash
         run: |
           set -euxo pipefail
+          mv data/*/* data
           if [ -n "$(git status -s data)" ]; then
             git config user.name github-actions
             git config user.email github-actions@github.comgithub.com
+            git checkout -b bot/update-data
             echo 'Committing data...'
             git add data
             git diff --staged
             git commit -m "📦 update laws data $(date)"
-            git push
+            git push -u
           fi
