@@ -3,9 +3,6 @@ name: Update Laws Data
 on:
   schedule:
     - cron: '0 * * * *'
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
@@ -65,6 +62,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          ssh-key: ${{ secrets.KEY_UPDATE_LAWS_DATA }}
 
       - name: Download artifacts
         uses: actions/download-artifact@v3
@@ -76,14 +75,12 @@ jobs:
         run: |
           set -euxo pipefail
           mv data/*/* data
-          if [ -n "$(git status -s data)" ]; then
+          if [ -n "$(git status -s data/promises.json)" ]; then
             git config user.name github-actions
             git config user.email github-actions@github.comgithub.com
-            git checkout -b bot/update-data            
             echo 'Committing data...'
             git add data
             git diff --staged
             git commit -m "📦 update laws data $(date)"
-            git rebase main
             git push -u
           fi
