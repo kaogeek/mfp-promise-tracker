@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@master
+        uses: actions/checkout@v3
 
       - name: Setup node env 🏗
         uses: actions/setup-node@v3
@@ -79,10 +79,11 @@ jobs:
           if [ -n "$(git status -s data)" ]; then
             git config user.name github-actions
             git config user.email github-actions@github.comgithub.com
-            git checkout -b bot/update-data
+            git checkout -b bot/update-data            
             echo 'Committing data...'
             git add data
             git diff --staged
             git commit -m "📦 update laws data $(date)"
+            git rebase main
             git push -u
           fi
