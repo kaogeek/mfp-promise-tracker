@@ -100,7 +100,12 @@
     "isNCPO": false,
     "imageUrl": "https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/images/law.jpeg",
     "links": [],
-    "timelines": []
+    "timelines": [
+      {
+        "label": "กำลังจัดเตรียมร่าง",
+        "from": "2023-07-19"
+      }
+    ]
   },
   {
     "id": 1804017492,
