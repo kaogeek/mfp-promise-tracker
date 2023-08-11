@@ -173,6 +173,9 @@ export default Vue.extend({
       this.scrollToTop();
     },
   },
+  beforeMount() {
+    this.$store.dispatch('laws/fetchLaws');
+  },
   mounted() {
     this.filters = Object.entries(this.$router.currentRoute.query).map(
       ([type, value]) => ({ type, value } as Filter)
