@@ -155,14 +155,12 @@ export default Vue.extend({
   head: createMetadata({ pageName: "ดูร่างกฎหมาย" }),
   computed: {
     filteredPromises(): TrackingPromiseLaws[] {
+      const lawsState = this.$store.getters["laws/getLaws"];
       return this.filters.length > 0
-        ? (this.laws as TrackingPromiseLaws[]).filter((promise) =>
+        ? (lawsState as TrackingPromiseLaws[]).filter((promise) =>
             this.filters.every((filter: Filter) => checkFilterOnPromise(filter, promise))
           )
-        : (this.laws as TrackingPromiseLaws[]);
-    },
-    laws(): any {
-      return this.$store.getters["laws/getLaws"];
+        : (lawsState as TrackingPromiseLaws[]);
     },
   },
   watch: {
