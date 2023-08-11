@@ -155,12 +155,14 @@ export default Vue.extend({
   head: createMetadata({ pageName: "ดูร่างกฎหมาย" }),
   computed: {
     filteredPromises(): TrackingPromiseLaws[] {
-      const lawsState = this.$store.getters["laws/getLaws"];
-      return this.filters.length > 0
-        ? (lawsState as TrackingPromiseLaws[]).filter((promise) =>
-            this.filters.every((filter: Filter) => checkFilterOnPromise(filter, promise))
-          )
-        : (lawsState as TrackingPromiseLaws[]);
+      return (this.$store.getters["laws/getLaws"] as TrackingPromiseLaws[]).filter((promise) =>
+        this.filters.every((filter: Filter) => checkFilterOnPromise(filter, promise))
+      )
+      // return this.filters.length > 0
+      //   ? (this.$store.getters["laws/getLaws"] as TrackingPromiseLaws[]).filter((promise) =>
+      //       this.filters.every((filter: Filter) => checkFilterOnPromise(filter, promise))
+      //     )
+      //   : (this.$store.getters["laws/getLaws"] as TrackingPromiseLaws[]);
     },
   },
   watch: {
@@ -170,9 +172,6 @@ export default Vue.extend({
       this.$router.push({ query });
       this.scrollToTop();
     },
-  },
-  beforeMount() {
-    this.$store.dispatch('laws/fetchLaws');
   },
   mounted() {
     this.filters = Object.entries(this.$router.currentRoute.query).map(
