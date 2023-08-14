@@ -662,5 +662,18 @@
     "imageUrl": "https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/images/law.jpeg",
     "links": [],
     "timelines": []
+  },
+  {
+    "id": 1810917536,
+    "party": "ก้าวไกล",
+    "title": "ร่าง พ.ร.บ. ว่าด้วยการเวนคืนและการได้มาซึ่งอสังหาริมทรัพย์ (ปลดล็อกเวนคืน)",
+    "category": "decentralize",
+    "status": "proposed",
+    "description": "ติดตามรายละเอียดของร่างได้เร็ว ๆ นี้",
+    "solution": "ติดตามรายละเอียดของร่างได้เร็ว ๆ นี้",
+    "isNCPO": false,
+    "imageUrl": "https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/images/law.jpeg",
+    "links": [],
+    "timelines": []
   }
 ]
