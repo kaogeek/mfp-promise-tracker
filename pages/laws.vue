@@ -66,7 +66,7 @@
 <script lang="ts">
 import Vue from "vue";
 import PromiseOverview from "@/components/laws/promise-overview/promise-overview.vue";
-// import laws from '@/data/laws.json';
+import laws from '@/data/laws.json';
 import TopicGroup from "@/components/laws/topic-group/topic-group.vue";
 import FilterPanel from "@/components/laws/filter-panel/filter-panel.vue";
 import ToggleList, { ListOption } from "@/components/toggle/toggle-list.vue";
@@ -112,7 +112,6 @@ export default Vue.extend({
     // LinkBanner,
     // FormLink,
   },
-  middleware: ["laws"],
   data() {
     return {
       topics: [
@@ -150,12 +149,13 @@ export default Vue.extend({
           value: GroupBy.Status,
         },
       ] as ListOption[],
+      getLaws: laws,
     };
   },
   head: createMetadata({ pageName: "ดูร่างกฎหมาย" }),
   computed: {
     filteredPromises(): TrackingPromiseLaws[] {
-      return (this.$store.getters["laws/getLaws"] as TrackingPromiseLaws[]).filter((promise) =>
+      return (this.getLaws as TrackingPromiseLaws[]).filter((promise) =>
         this.filters.every((filter: Filter) => checkFilterOnPromise(filter, promise))
       )
       // return this.filters.length > 0
@@ -172,6 +172,9 @@ export default Vue.extend({
       this.$router.push({ query });
       this.scrollToTop();
     },
+  },
+  beforeMount() {
+    this.fetchLaws();
   },
   mounted() {
     this.filters = Object.entries(this.$router.currentRoute.query).map(
@@ -199,6 +202,19 @@ export default Vue.extend({
     scrollToTop() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     },
+    async fetchLaws() {
+      const timestamp = `${Math.floor(new Date().getTime() / 1000)}${Math.floor(
+        Math.random() * 10000000000
+      )}`;
+      const response = await fetch(
+        `https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/data/laws.json?t=${timestamp}`
+      )
+      .then((res) => res.json())
+      .then((data) => data)
+      .catch((error) => console.log(error));
+
+      this.getLaws = response;
+    }
   },
 });
 </script>

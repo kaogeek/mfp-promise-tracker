@@ -5,8 +5,6 @@ const BASE_PATH = process.env.BASE_PATH || '';
 const { title, meta } = createMetadata();
 
 export default {
-  ssr: true,
-
   target: 'static',
 
   head: {
