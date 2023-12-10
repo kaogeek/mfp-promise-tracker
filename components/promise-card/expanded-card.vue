@@ -11,7 +11,9 @@
         :id="`expanded-card-${promise.id}-description`"
         class="wv-font-baijamjuri wv-b5"
       >
-        {{ promise.description }}
+      <span v-html="promise.description.replace(/(?:\r\n|\r|\n)/g, '<br />')">
+        </span>
+        <!-- {{ promise.description }} -->
       </p>
       <h2 class="wv-h10 wv-font-kondolar wv-font-black py-4">แนวทางการแก้ไข</h2>
       <p
@@ -21,6 +23,15 @@
         <!-- {{ promise.solution !== '' ? promise.solution : 'ติดตามรายละเอียดของร่างได้เร็ว ๆ นี้' }} -->
         <span v-html="promise.solution.replace(/(?:\r\n|\r|\n)/g, '<br />')">
         </span>
+      </p>
+      <h2 class="wv-h10 wv-font-kondolar wv-font-black py-4">อ่านร่างฉบับเต็ม</h2>
+      <p
+        :id="`expanded-card-${promise.url}-description`"
+        class="wv-font-baijamjuri wv-b5"
+        @click="openInNewTab(promise.url)"
+        style="text-decoration: underline; cursor: pointer;"
+      >
+        {{ promise.url }}
       </p>
       <NCPO v-if="promise.isNCPO" />
       <div v-if="promise.links.length > 0">
@@ -78,5 +89,10 @@ export default Vue.extend({
       default: () => ({}),
     },
   },
+  methods: {
+    openInNewTab(url: string) {
+      window.open(url, '_blank');
+    }
+  }
 });
 </script>

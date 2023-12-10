@@ -48,6 +48,7 @@ export function transformToTrackingPromises(
         status,
         description: r.explain,
         solution: r.solution,
+        url: r.url,
         isNCPO: r.isNCPO,
         imageUrl,
         links: r.links,
