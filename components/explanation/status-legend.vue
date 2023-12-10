@@ -8,7 +8,7 @@
           data.name
         }}</span>
       </div>
-      <p v-if="showDetail" class="wv-b6 wv-font-baijamjuri">
+      <p v-if="showDetail" class="wv-b5 wv-font-baijamjuri">
         {{ data.description }}
       </p>
     </div>

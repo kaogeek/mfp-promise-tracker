@@ -5,7 +5,7 @@
         <span>{{ formatDate(timeline.from) }}</span>
         <span v-if="timeline.to">- {{ formatDate(timeline.to) }}</span>
       </p>
-      <p class="wv-b5 wv-font-baijamjuri">{{ timeline.label }}</p>
+      <p class="wv-b3 wv-font-baijamjuri">{{ timeline.label }}</p>
     </BoxContainer>
     <TimelineArrow v-if="!isLastItem" class="p-2" />
   </div>

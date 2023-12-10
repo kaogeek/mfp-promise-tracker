@@ -9,7 +9,7 @@
       <h2 class="wv-h10 wv-font-kondolar wv-font-black py-4">ปัญหาและที่มา</h2>
       <p
         :id="`expanded-card-${promise.id}-description`"
-        class="wv-font-baijamjuri wv-b5"
+        class="wv-font-baijamjuri wv-b4"
       >
       <span v-html="promise.description.replace(/(?:\r\n|\r|\n)/g, '<br />')">
         </span>
@@ -18,7 +18,7 @@
       <h2 class="wv-h10 wv-font-kondolar wv-font-black py-4">แนวทางการแก้ไข</h2>
       <p
         :id="`expanded-card-${promise.id}-description`"
-        class="wv-font-baijamjuri wv-b5"
+        class="wv-font-baijamjuri wv-b4"
       >
         <!-- {{ promise.solution !== '' ? promise.solution : 'ติดตามรายละเอียดของร่างได้เร็ว ๆ นี้' }} -->
         <span v-html="promise.solution.replace(/(?:\r\n|\r|\n)/g, '<br />')">
@@ -27,7 +27,7 @@
       <h2 class="wv-h10 wv-font-kondolar wv-font-black py-4">อ่านร่างฉบับเต็ม</h2>
       <p
         :id="`expanded-card-${promise.url}-description`"
-        class="wv-font-baijamjuri wv-b5"
+        class="wv-font-baijamjuri wv-b4"
         @click="openInNewTab(promise.url)"
         style="text-decoration: underline; cursor: pointer;"
       >

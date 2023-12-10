@@ -15,7 +15,7 @@
         {{ titleText }}
       </h1>
     </div>
-    <p class="wv-b6 wv-font-baijamjuri py-4 sm:px-4 sm:py-0 sm:w-1/2">
+    <p class="wv-b5 wv-font-baijamjuri py-4 sm:px-4 sm:py-0 sm:w-1/2">
       {{ bodyText }}
     </p>
     <NuxtLink class="self-start" :to="buttonUrl">

@@ -1,33 +1,33 @@
 @font-face {
   font-family: 'Kondolar Thai';
-  src: url(KondolarThai-Regular.woff) format('woff');
+  src: url(Anakotmai-Medium.otf) format('opentype');
   font-display: swap;
 }
 @font-face {
   font-family: 'Kondolar Thai';
   font-weight: 900;
-  src: url(KondolarThai-Black.woff) format('woff');
+  src: url(Anakotmai-Bold.otf) format('opentype');
   font-display: swap;
 }
 @font-face {
   font-family: 'Anuphan';
-  src: url(Anuphan-Regular.otf) format('opentype');
+  src: url(Anakotmai-Light.otf) format('opentype');
   font-display: swap;
 }
 @font-face {
   font-family: 'Anuphan';
   font-weight: 600;
-  src: url(Anuphan-SemiBold.otf) format('opentype');
+  src: url(Anakotmai-Medium.otf) format('opentype');
   font-display: swap;
 }
 @font-face {
   font-family: 'Bai Jamjuri';
-  src: url(BaiJamjuree-Regular.ttf) format('truetype');
+  src: url(Pracharath-Reg.otf) format('opentype');
   font-display: swap;
 }
 @font-face {
   font-family: 'Bai Jamjuri';
   font-weight: 700;
-  src: url(BaiJamjuree-Bold.ttf) format('truetype');
+  src: url(Pracharath-Bld.otf) format('opentype');
   font-display: swap;
 }
