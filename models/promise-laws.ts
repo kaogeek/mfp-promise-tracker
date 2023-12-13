@@ -75,5 +75,5 @@ export const promiseLawsTopicTextMap = new Map<
   [PromiseLawsTopic.Rights, { long: 'สิทธิเสรีภาพ', short: 'สิทธิเสรีภาพ' }],
   [PromiseLawsTopic.Peace, { long: 'สันติภาพ/ความขัดแย้ง', short: 'สันติภาพ/ความขัดแย้ง' }],
   [PromiseLawsTopic.Diversity, { long: 'ความหลากหลาย', short: 'ความหลากหลาย' }],
-  [PromiseLawsTopic.Politics, { long: 'รัฐธรรมนูญ', short: 'รัฐธรรมนูญ' }],
+  [PromiseLawsTopic.Politics, { long: 'พัฒนาการเมือง', short: 'พัฒนาการเมือง' }],
 ]);

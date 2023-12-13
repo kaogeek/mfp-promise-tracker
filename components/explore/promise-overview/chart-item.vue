@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row text-white">
+  <div class="flex flex-row text-white" v-if="icon != 'status/nodata_small.png'">
     <div class="flex-1 flex flex-row items-center space-x-1">
       <img
         v-if="icon"

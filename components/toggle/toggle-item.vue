@@ -3,6 +3,7 @@
     class="flex px-2.5 py-2 rounded-lg space-x-1 items-center wv-font-anuphan wv-font-semibold wv-u5"
     :class="selected ? 'bg-white text-black' : 'bg-subglass text-white'"
     @click="clickItem"
+    v-if="option.value !== 'nodata'"
   >
     <svg
       v-if="selected"
