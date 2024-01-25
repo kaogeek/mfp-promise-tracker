@@ -30,7 +30,7 @@ jobs:
           cache: yarn
 
       - name: Install dependencies 👨🏻‍💻
-        run: yarn
+        run: yarn --ignore-engines
 
       - name: Fetch data 🏃🏻‍♂️
         run: |
