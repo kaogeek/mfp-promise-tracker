@@ -75,6 +75,6 @@ jobs:
             echo 'Committing data...'
             git add data
             git diff --staged
-            git commit -m "📦 update laws data $(date)"
+            git commit -m "📦 update laws data $(date --iso-8601=seconds)"
             git push
           fi
