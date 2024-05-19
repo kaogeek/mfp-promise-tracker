@@ -781,5 +781,57 @@
     "isNCPO": false,
     "links": [],
     "timelines": []
+  },
+  {
+    "id": 2024051901,
+    "party": "",
+    "title": "ร่าง พ.ร.บ. มาตรการของฝ่ายบริหารในการป้องกันและปราบปรามการทุจริต",
+    "category": "corruption",
+    "status": "working",
+    "description": "",
+    "solution": "",
+    "url": "https://drive.google.com/file/d/1hW3wcCPjcAjRevBAL7QWJysIBHw9ZlHH/view?usp=sharing",
+    "isNCPO": false,
+    "links": [],
+    "timelines": []
+  },
+  {
+    "id": 2024051901,
+    "party": "",
+    "title": "ร่าง พ.ร.บ. ยกเลิกคำสั่งหัวหน้า คสช. ที่ 7/2558 เรื่อง การปฏิบัติหน้าที่ของคณะกรรมการคุรุสภา คณะกรรมการส่งเสริมสวัสดิการและสวัสดิภาพครูและบุคลากรทางการศึกษา และคณะกรรมการบริหารองค์การค้าของสำนักงานคณะกรรมการส่งเสริมสวัสดิการและสวัสดิภาพครูและบุคลากรทางการศึกษา ลงวันที่ 16 เมษายน พ.ศ. 2558 และคำสั่งหัวหน้า คสช. ที่ 17/2560 เรื่อง แก้ไขเพิ่มเติมคำสั่งหัวหน้า คสช. ที่ 7/2558 ลงวันที่ 21 มีนาคม พ.ศ. 2560 (คืนสภาวิชาชีพให้ครู)",
+    "category": "government",
+    "status": "proposed",
+    "description": "",
+    "solution": "",
+    "url": "https://drive.google.com/file/d/1oG2AD-S_wrYZFCKc8-I3GC_oDIPLJn4O/view?usp=drive_link",
+    "isNCPO": false,
+    "links": [],
+    "timelines": []
+  },
+  {
+    "id": 2024051902,
+    "party": "",
+    "title": "ร่าง พ.ร.บ. ยกเลิกคำสั่งหัวหน้า คสช. ที่ 11/2561 เรื่อง การแก้ไของค์ประกอบของคณะกรรมการมาตรฐานวิชาชีพตามกฎหมายว่าด้วยสภาครูและบุคลากรทางการศึกษา ลงวันที่ 25 กรกฎาคม พ.ศ. 2561 (คืนมาตรฐานวิชาชีพครู)",
+    "category": "government",
+    "status": "proposed",
+    "description": "",
+    "solution": "",
+    "url": "https://drive.google.com/file/d/1Vl19yxQiKuxGHLlIeL-5xo5wVBZdlwoJ/view?usp=drive_link",
+    "isNCPO": false,
+    "links": [],
+    "timelines": []
+  },
+    {
+    "id": 2024051903,
+    "party": "",
+    "title": "ร่าง พ.ร.บ. ยกเลิกคำสั่งหัวหน้า คสช. ที่ 16/2560 เรื่อง การบริหารงานบุคคลของข้าราชการครูและบุคลากรทางการศึกษา ลงวันที่ 21 มีนาคม พ.ศ. 2560 (คืน ก.ค.ศ.)",
+    "category": "government",
+    "status": "proposed",
+    "description": "",
+    "solution": "",
+    "url": "https://drive.google.com/file/d/1bKqfTm6syQKMWQinHByg4DRveE0pBiZo/view?usp=drive_link",
+    "isNCPO": false,
+    "links": [],
+    "timelines": []
   }
 ]
