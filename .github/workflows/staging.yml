@@ -20,33 +20,27 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: latest
-          run_install: false
-
       - name: Setup node env 🏗
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
+          cache: npm
 
       - name: Install dependencies 👨🏻‍💻
-        run: pnpm i
+        run: npm i
 
       - name: Run tests 🧪
-        run: pnpm test
+        run: npm run test
 
       - name: Fetch data 🏃🏻‍♂️
         run: |
           touch .env
           echo MONDAY_API_TOKEN=${{ secrets.MONDAY_API_TOKEN }} >> .env
           echo MONDAY_BOARD_ID=${{ secrets.MONDAY_BOARD_ID }} >> .env
-          pnpm fetch-data
+          npm run fetch-data
 
       - name: Build 🍳
-        run: pnpm build
+        run: npm run build
         env:
           BASE_PATH: /promise-tracker
 
