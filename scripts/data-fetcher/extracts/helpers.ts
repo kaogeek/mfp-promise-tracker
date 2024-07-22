@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 export const LIMIT = 1000;
 
 interface PageInfo {

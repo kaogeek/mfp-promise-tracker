@@ -23,22 +23,27 @@ jobs:
       - name: Checkout 🛎
         uses: actions/checkout@v4
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+          run_install: false
+
       - name: Setup node env 🏗
         uses: actions/setup-node@v4
         with:
-          node-version: lts/*
-          cache: yarn
+          node-version: 20
+          cache: pnpm
 
       - name: Install dependencies 👨🏻‍💻
-        run: yarn --ignore-engines
+        run: pnpm i
 
       - name: Fetch data 🏃🏻‍♂️
         run: |
           touch .env
           echo MONDAY_API_TOKEN=${{ secrets.MONDAY_API_TOKEN }} >> .env
           echo MONDAY_BOARD_ID=${{ secrets.MONDAY_BOARD_ID }} >> .env
-          yarn config set ignore-engines true
-          yarn fetch-data
+          pnpm fetch-data
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
