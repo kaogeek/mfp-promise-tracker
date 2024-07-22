@@ -26,19 +26,18 @@ jobs:
       - name: Setup node env 🏗
         uses: actions/setup-node@v4
         with:
-          node-version: lts/*
-          cache: yarn
+          node-version: 20
+          cache: npm
 
       - name: Install dependencies 👨🏻‍💻
-        run: yarn --ignore-engines
+        run: npm i
 
       - name: Fetch data 🏃🏻‍♂️
         run: |
           touch .env
           echo MONDAY_API_TOKEN=${{ secrets.MONDAY_API_TOKEN }} >> .env
           echo MONDAY_BOARD_ID=${{ secrets.MONDAY_BOARD_ID }} >> .env
-          yarn config set ignore-engines true
-          yarn fetch-data
+          npm run fetch-data
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
