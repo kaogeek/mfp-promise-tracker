@@ -18,7 +18,7 @@
     </div>
     <div v-if="promises.length > 0" class="flex flex-col space-y-2">
       <h1 class="wv-h8 wv-font-kondolar wv-font-black">
-        สำรวจคำสัญญา พรรคก้าวไกล
+        สำรวจคำสัญญา พรรคประชาชน
       </h1>
       <p
         ref="countLabel"
@@ -84,7 +84,7 @@ export default Vue.extend({
             {
               type: 'default',
               value: 'all',
-              src: 'status/mfp-logo.png',
+              src: 'status/logo-pp.png',
             },
           ]
         : this.filters

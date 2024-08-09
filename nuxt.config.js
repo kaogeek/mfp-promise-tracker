@@ -32,7 +32,7 @@ export default {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: `${BASE_PATH}/favicon-32x32.png`,
+        href: `${BASE_PATH}/favicon-32x32.ico`,
       },
       {
         rel: 'mask-icon',

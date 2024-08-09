@@ -1,5 +1,5 @@
 export const BASE_TITLE = 'ติดตามชุดกฎหมายเปลี่ยนประเทศ';
-const DESCRIPTION = 'ที่พรรคก้าวไกลพร้อมยื่นเข้าสภา';
+const DESCRIPTION = 'ที่พรรคประชาชนพร้อมยื่นเข้าสภา';
 export const DEFAULT_OG_IMAGE = 'https://raw.githubusercontent.com/kaogeek/mfp-promise-tracker/main/static/og/default.png';
 
 interface createMetadataParams {

@@ -1,8 +1,8 @@
 <template>
   <div class="status-animation">
     <img
-      :src="`${$config.path.images}/status/mfp-logo.png`"
-      alt="mfp-logo"
+      :src="`${$config.path.images}/status/logo-pp.png`"
+      alt="logo-pp"
       width="50"
       height="43"
     />
@@ -22,7 +22,7 @@ export default Vue.extend({
   width: 50px;
   height: 100%;
   margin-bottom: 20px;
-  /* background-image: url('/images/status/mfp-logo.png'); */
+  /* background-image: url('/images/status/logo-pp.png'); */
   /* background-size: contain; */
 }
 </style>

@@ -28,7 +28,7 @@
         :class="hasFilter ? 'wv-h8' : 'wv-h6'"
       >
         สำรวจร่างกฎหมาย<br />
-        พรรคก้าวไกล
+        พรรคประชาชน
       </h1>
       <p
         ref="countLabel"
@@ -100,7 +100,7 @@ export default Vue.extend({
             {
               type: 'default',
               value: 'all',
-              src: 'status/mfp-logo.png',
+              src: 'status/logo-pp.png',
             },
           ]
         : this.filters
