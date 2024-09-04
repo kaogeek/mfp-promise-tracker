@@ -1,0 +1,30 @@
+name: Sync JSON Data
+
+on:
+  schedule:
+    # This schedule will run every day at midnight UTC (modify as needed)
+    - cron: '0 * * * *'
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  sync-json:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Fetch JSON from URL
+      run: |
+        curl -s "https://script.google.com/macros/s/${{ secrets.KEY_APP_SCRIPT }}/exec?action=getData" -o data/laws.json
+
+    - name: Commit and Push Changes
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.comgithub.com
+        echo 'Committing data...'
+        git add data/laws.json
+        git commit -m "Sync JSON data from Google Apps Script"
+        git push
+      # env:
+      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
