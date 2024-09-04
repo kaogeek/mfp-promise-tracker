@@ -6,25 +6,36 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch: # Allows manual trigger
 
+permissions:
+  contents: write
+
 jobs:
   sync-json:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout 🛎
       uses: actions/checkout@v4
+      with:
+        ssh-key: ${{ secrets.KEY_UPDATE_LAWS_DATA }} # Ensure that this SSH key has proper permissions
 
-    - name: Fetch JSON from URL
+    - name: Setup node env 🏗
+      uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+        cache: yarn
+
+    - name: Install dependencies 👨🏻‍💻
+      run: yarn --ignore-engines
+
+    - name: Fetch data 🏃🏻‍♂️
       run: |
         curl -s "https://script.google.com/macros/s/${{ secrets.KEY_APP_SCRIPT }}/exec?action=getData" -o data/laws.json
 
     - name: Commit and Push Changes
       run: |
-        git config user.name github-actions
-        git config user.email github-actions@github.comgithub.com
-        echo 'Committing data...'
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add data/laws.json
         git commit -m "Sync JSON data from Google Apps Script"
-        git push
-      # env:
-      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        git push origin HEAD:refs/heads/main
