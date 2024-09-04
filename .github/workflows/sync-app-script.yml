@@ -2,8 +2,7 @@ name: Sync JSON Data
 
 on:
   schedule:
-    # This schedule will run every day at midnight UTC (modify as needed)
-    - cron: '0 * * * *'
+    - cron: '0 * * * *' # Run at midnight UTC daily
   workflow_dispatch: # Allows manual trigger
 
 permissions:
@@ -19,15 +18,6 @@ jobs:
       with:
         ssh-key: ${{ secrets.KEY_UPDATE_LAWS_DATA }} # Ensure that this SSH key has proper permissions
 
-    - name: Setup node env 🏗
-      uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-        cache: yarn
-
-    - name: Install dependencies 👨🏻‍💻
-      run: yarn --ignore-engines
-
     - name: Fetch data 🏃🏻‍♂️
       run: |
         curl -s "https://script.google.com/macros/s/${{ secrets.KEY_APP_SCRIPT }}/exec?action=getData" -o data/laws.json
@@ -38,4 +28,6 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add data/laws.json
         git commit -m "Sync JSON data from Google Apps Script"
-        git push origin HEAD:refs/heads/main
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
