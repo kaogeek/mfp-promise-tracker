@@ -20,7 +20,7 @@ jobs:
 
     - name: Fetch data 🏃🏻‍♂️
       run: |
-        curl -s "https://script.google.com/macros/s/${{ secrets.KEY_APP_SCRIPT }}/exec?action=getData" -o data/laws.json
+        curl -L -s "https://script.google.com/macros/s/${{ secrets.KEY_APP_SCRIPT }}/exec?action=getData" -o data/laws.json
 
     - name: Commit and Push Changes
       run: |
