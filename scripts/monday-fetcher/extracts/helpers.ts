@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import fetch from 'node-fetch';
+
+import process from "node:process";
 
 /**
  * monday's default limit results set
