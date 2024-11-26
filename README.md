@@ -15,6 +15,14 @@ Move Forward Party promise tracker
 - [Jest](https://jestjs.io) and [Vue Test Utils](https://v1.test-utils.vuejs.org/guides/#getting-started)
 - ... as a database
 
+## Quick setup
+```bash
+rm -rf node_modules                                                                                                                                                                              1 ✘ 
+rm -f package-lock.json
+npm cache clean --force
+npm i
+```
+
 ## 📐 Architecture
 
 The project use static site generator (SSG) strategy. In the pipeline, API is called once before the build time, which mean no API will be called after the static site is generated. To update the site after the data is updated, site needed to be built and deployed again.
