@@ -61,7 +61,7 @@ jobs:
           ssh-key: ${{ secrets.KEY_UPDATE_LAWS_DATA }}
 
       - name: Download artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           path: data
           
